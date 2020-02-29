@@ -695,6 +695,11 @@ MonoBehaviour:
   shotPower: 10
   rufoletaKey: joystick 1 button 3
   rufoletaPower: 20
+  levantamosKey: 
+  backpassKey: 
+  backpassPower: 0
+  wtfKey: 
+  wtfPower: 0
   cano: {fileID: 2104642529}
 --- !u!135 &314376222
 SphereCollider:
@@ -1865,6 +1870,11 @@ MonoBehaviour:
   shotPower: 10
   rufoletaKey: 
   rufoletaPower: 0
+  levantamosKey: joystick 1 button 2
+  backpassKey: joystick 1 button 0
+  backpassPower: 1
+  wtfKey: joystick 1 button 1
+  wtfPower: 5
   cano: {fileID: 735435742}
 --- !u!135 &870019964
 SphereCollider:
@@ -3436,6 +3446,11 @@ MonoBehaviour:
   shotPower: 10
   rufoletaKey: 
   rufoletaPower: 0
+  levantamosKey: joystick 2 button 0
+  backpassKey: joystick 2 button 1
+  backpassPower: 1
+  wtfKey: joystick 2 button 2
+  wtfPower: 5
   cano: {fileID: 391930711}
 --- !u!135 &2137537028
 SphereCollider:
@@ -3689,6 +3704,11 @@ MonoBehaviour:
   shotPower: 10
   rufoletaKey: joystick 2 button 3
   rufoletaPower: 20
+  levantamosKey: 
+  backpassKey: 
+  backpassPower: 0
+  wtfKey: 
+  wtfPower: 0
   cano: {fileID: 769104249}
 --- !u!135 &4587751817851683954
 SphereCollider:

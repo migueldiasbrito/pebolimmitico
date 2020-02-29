@@ -16,6 +16,16 @@ public class MecoController : MonoBehaviour
     public string rufoletaKey;
     public float rufoletaPower;
 
+    public string levantamosKey;
+    private bool m_levatados = false;
+
+    public string backpassKey;
+    public float backpassPower;
+
+    public string wtfKey;
+    public float wtfPower;
+    private bool m_wtfMode = false;
+
     public GameObject cano;
 
     private float m_origin;
@@ -39,7 +49,16 @@ public class MecoController : MonoBehaviour
             // ANIMATE ME!
             if (m_Ball != null)
             {
-                m_Ball.GetComponent<Rigidbody>().AddForce(- transform.right * shotPower, ForceMode.Impulse);
+                if(m_wtfMode)
+                {
+                    m_Ball.GetComponent<Rigidbody>().AddForce(-transform.right * wtfPower, ForceMode.Impulse);
+                    int sign = Random.Range(-1f, 1f) >= 0 ? 1 : -1;
+                    m_Ball.GetComponent<Rigidbody>().AddForce(sign * transform.forward * wtfPower, ForceMode.Impulse);
+                }
+                else
+                {
+                    m_Ball.GetComponent<Rigidbody>().AddForce(-transform.right * shotPower, ForceMode.Impulse);
+                }
             }
         }
 
@@ -50,6 +69,35 @@ public class MecoController : MonoBehaviour
             {
                 m_Ball.GetComponent<Rigidbody>().AddForce(-transform.right * rufoletaPower, ForceMode.Impulse);
             }
+        }
+
+        if (levantamosKey != "" && Input.GetKeyDown(levantamosKey))
+        {
+            // CHANGE TO SHHHHHLERP
+            m_levatados = !m_levatados;
+            if (m_levatados)
+            {
+                transform.Rotate(new Vector3(0, 0, 90));
+            }
+            else
+            {
+                transform.Rotate(new Vector3(0, 0, -90));
+            }
+        }
+
+        if (backpassKey != "" && Input.GetKeyDown(backpassKey))
+        {
+            // ANIMATE ME!
+            if (m_Ball != null)
+            {
+                m_Ball.GetComponent<Rigidbody>().AddForce(transform.right * backpassPower, ForceMode.Impulse);
+            }
+        }
+
+        if (wtfKey != "" && Input.GetKeyDown(wtfKey))
+        {
+            m_wtfMode = !m_wtfMode;
+            // ANIMATE ME!
         }
     }
 
