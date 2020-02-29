@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Debug : MonoBehaviour
+public class InputDebug : MonoBehaviour
 {
     public Text p1KeyMap, p2KeyMap;
     public RectTransform p1LeftAnal, p1RightAnal, p2LeftAnal, p2RightAnal;
