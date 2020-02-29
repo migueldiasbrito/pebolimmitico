@@ -5,10 +5,16 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     GameObject ball;
+<<<<<<< Updated upstream
     public bool physics;
+=======
+    bool clickable;
+    bool physics;
+>>>>>>> Stashed changes
     Vector3 spawnPoint;
     void Start()
     {
+        clickable = true;
         ball = this.gameObject;
         ball.GetComponent<Rigidbody>().useGravity = false;
         physics = false;
@@ -51,10 +57,14 @@ public class BallMovement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        // Destroy(gameObject);
-        ball.GetComponent<Rigidbody>().AddForce(new Vector3(450f, -200f, 50f));
-        ball.GetComponent<Rigidbody>().useGravity = true;
-        physics = true;
+        if (clickable == true)
+        {
+            // Destroy(gameObject);
+            ball.GetComponent<Rigidbody>().AddForce(new Vector3(450f, -200f, 50f));
+            ball.GetComponent<Rigidbody>().useGravity = true;
+            physics = true;
+            clickable = false;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -63,11 +73,20 @@ public class BallMovement : MonoBehaviour
             ResetBall();
         }
 
+<<<<<<< Updated upstream
         if(other.gameObject.tag == "Baliza")
         {
             Debug.Log("GOLO!");
             ResetBall();
         }
+=======
+        if (other.gameObject.tag == "Goal")
+        {
+            ResetBall();
+            //insert point distribution 
+        }
+
+>>>>>>> Stashed changes
     }
 
     void ResetBall()
@@ -76,6 +95,7 @@ public class BallMovement : MonoBehaviour
         ball.GetComponent<Rigidbody>().useGravity = false;
         ball.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
         physics = false;
+        clickable = true;
     }
 
 }
