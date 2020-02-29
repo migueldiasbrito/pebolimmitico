@@ -53,10 +53,9 @@ public class BallMovement : MonoBehaviour
         ball.GetComponent<Rigidbody>().useGravity = true;
         physics = true;
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "OoB")
+        if (other.gameObject.tag == "OoB")
         {
             ResetBall();
         }
@@ -66,6 +65,7 @@ public class BallMovement : MonoBehaviour
     {
         ball.transform.position = spawnPoint;
         ball.GetComponent<Rigidbody>().useGravity = false;
+        ball.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
         physics = false;
     }
 }
