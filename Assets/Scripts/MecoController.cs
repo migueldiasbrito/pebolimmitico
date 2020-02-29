@@ -13,6 +13,9 @@ public class MecoController : MonoBehaviour
     public string shotKey;
     public float shotPower;
 
+    public string rufoletaKey;
+    public float rufoletaPower;
+
     public GameObject cano;
 
     private float m_origin;
@@ -37,6 +40,15 @@ public class MecoController : MonoBehaviour
             if (m_Ball != null)
             {
                 m_Ball.GetComponent<Rigidbody>().AddForce(- transform.right * shotPower, ForceMode.Impulse);
+            }
+        }
+
+        if (rufoletaKey != "" && Input.GetKeyDown(rufoletaKey))
+        {
+            // ANIMATE ME!
+            if (m_Ball != null)
+            {
+                m_Ball.GetComponent<Rigidbody>().AddForce(-transform.right * rufoletaPower, ForceMode.Impulse);
             }
         }
     }

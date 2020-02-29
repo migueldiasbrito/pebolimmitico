@@ -693,6 +693,8 @@ MonoBehaviour:
   rotationSpeed: 500
   shotKey: joystick 1 button 4
   shotPower: 10
+  rufoletaKey: joystick 1 button 3
+  rufoletaPower: 20
   cano: {fileID: 2104642529}
 --- !u!135 &314376222
 SphereCollider:
@@ -1861,6 +1863,8 @@ MonoBehaviour:
   rotationSpeed: 500
   shotKey: joystick 1 button 5
   shotPower: 10
+  rufoletaKey: 
+  rufoletaPower: 0
   cano: {fileID: 735435742}
 --- !u!135 &870019964
 SphereCollider:
@@ -3430,6 +3434,8 @@ MonoBehaviour:
   rotationSpeed: 500
   shotKey: joystick 2 button 4
   shotPower: 10
+  rufoletaKey: 
+  rufoletaPower: 0
   cano: {fileID: 391930711}
 --- !u!135 &2137537028
 SphereCollider:
@@ -3681,6 +3687,8 @@ MonoBehaviour:
   rotationSpeed: 500
   shotKey: joystick 2 button 5
   shotPower: 10
+  rufoletaKey: joystick 2 button 3
+  rufoletaPower: 20
   cano: {fileID: 769104249}
 --- !u!135 &4587751817851683954
 SphereCollider:
