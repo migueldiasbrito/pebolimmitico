@@ -220,6 +220,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2945023981622092015, guid: b3c207e6ee9668349a788925bcd21f67,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.7074444
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945023981959653155, guid: b3c207e6ee9668349a788925bcd21f67,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.7074444
+      objectReference: {fileID: 0}
     - target: {fileID: 2945023982225361297, guid: b3c207e6ee9668349a788925bcd21f67,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -279,6 +289,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Field
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945023982662973990, guid: b3c207e6ee9668349a788925bcd21f67,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.7074444
+      objectReference: {fileID: 0}
+    - target: {fileID: 2945023982734997036, guid: b3c207e6ee9668349a788925bcd21f67,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.7074444
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3c207e6ee9668349a788925bcd21f67, type: 3}
@@ -707,6 +727,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6598210867674533336, guid: ae967860a300ec14e9a7fd800ff84fae,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6598210867674533343, guid: ae967860a300ec14e9a7fd800ff84fae,
         type: 3}
       propertyPath: m_Name
@@ -740,7 +765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137169190}
   m_LocalRotation: {x: 0.00078905246, y: 0.70710635, z: 0.000789052, w: 0.7071064}
-  m_LocalPosition: {x: -8.16, y: 5.86, z: 0.06}
+  m_LocalPosition: {x: -8.06, y: 6.02, z: 0.02}
   m_LocalScale: {x: 0.5000001, y: 0.5, z: 0.5000001}
   m_Children:
   - {fileID: 917541728}
@@ -757,11 +782,11 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137169190}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 62
   m_CollisionDetection: 0
@@ -777,4 +802,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2240507c031c7469969494361668d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100000
