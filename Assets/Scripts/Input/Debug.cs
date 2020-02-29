@@ -17,18 +17,23 @@ public class Debug : MonoBehaviour
         float p1keeper = Input.GetAxis("LeftKeeper");
         float p1defs = Input.GetAxis("LeftDefenders");
 
-        p1LeftAnal.offsetMin = new Vector2(p1LeftAnal.offsetMin.x, p1keeper * 25);
-        p1RightAnal.offsetMin = new Vector2(p1RightAnal.offsetMin.x, p1defs * 25);
-        p1LeftAnal.offsetMax = new Vector2(p1LeftAnal.offsetMax.x, p1keeper * 25);
-        p1RightAnal.offsetMax = new Vector2(p1RightAnal.offsetMax.x, p1defs * 25);
+        float p1keeperRotation = Input.GetAxis("LeftKeeperRotation");
+        float p1defsRotation = Input.GetAxis("LeftDefendersRotation");
+
+        p1LeftAnal.offsetMin = new Vector2(p1keeperRotation * 25, p1keeper * 25);
+        p1RightAnal.offsetMin = new Vector2(p1defsRotation * 25, p1defs * 25);
+        p1LeftAnal.offsetMax = new Vector2(p1keeperRotation * 25, p1keeper * 25);
+        p1RightAnal.offsetMax = new Vector2(p1defsRotation * 25, p1defs * 25);
 
         float p2keeper = Input.GetAxis("RightKeeper");
         float p2defs = Input.GetAxis("RightDefenders");
+        float p2keeperRotation = Input.GetAxis("RightKeeperRotation");
+        float p2defsRotation = Input.GetAxis("RightDefendersRotation");
 
-        p2LeftAnal.offsetMin = new Vector2(p2LeftAnal.offsetMin.x, p2defs * 25);
-        p2RightAnal.offsetMin = new Vector2(p2RightAnal.offsetMin.x, p2keeper * 25);
-        p2LeftAnal.offsetMax = new Vector2(p2LeftAnal.offsetMax.x, p2defs * 25);
-        p2RightAnal.offsetMax = new Vector2(p2RightAnal.offsetMax.x, p2keeper * 25);
+        p2LeftAnal.offsetMin = new Vector2(p2defsRotation * 25, p2defs * 25);
+        p2RightAnal.offsetMin = new Vector2(p2keeperRotation * 25, p2keeper * 25);
+        p2LeftAnal.offsetMax = new Vector2(p2defsRotation * 25, p2defs * 25);
+        p2RightAnal.offsetMax = new Vector2(p2keeperRotation* 25, p2keeper * 25);
 
         p1KeyMap.text =
             "joystick 1 button 0 " + Input.GetKey("joystick 1 button 0") + "\n" +
@@ -45,6 +50,8 @@ public class Debug : MonoBehaviour
             "joystick 1 button 11 " + Input.GetKey("joystick 1 button 11") + "\n" +
             "LeftKeeper " + Input.GetAxis("LeftKeeper") + "\n" +
             "LeftDefenders " + Input.GetAxis("LeftDefenders") + "\n" +
+            "LeftKeeperRotation " + Input.GetAxis("LeftKeeperRotation") + "\n" +
+            "LeftDefendersRotation " + Input.GetAxis("LeftDefendersRotation") + "\n" +
             "";
 
         p2KeyMap.text =
@@ -62,6 +69,8 @@ public class Debug : MonoBehaviour
             "joystick 2 button 11 " + Input.GetKey("joystick 2 button 11") + "\n" +
             "RightKeeper " + Input.GetAxis("RightKeeper") + "\n" +
             "RightDefenders " + Input.GetAxis("RightDefenders") + "\n" +
+            "RightKeeperRotation " + Input.GetAxis("RightKeeperRotation") + "\n" +
+            "RightDefendersRotation " + Input.GetAxis("RightDefendersRotation") + "\n" +
             "";
     }
 }
