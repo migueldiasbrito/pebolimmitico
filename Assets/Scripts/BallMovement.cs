@@ -62,6 +62,12 @@ public class BallMovement : MonoBehaviour
         {
             ResetBall();
         }
+
+        if(other.gameObject.tag == "Baliza")
+        {
+            Debug.Log("GOLO!");
+            ResetBall();
+        }
     }
 
     void ResetBall()
@@ -71,4 +77,5 @@ public class BallMovement : MonoBehaviour
         ball.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
         physics = false;
     }
+
 }
