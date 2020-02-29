@@ -43,7 +43,6 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
                                      4, //força
                                      0.5f,//precisao
-                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite"),//Bola matreco
                                      Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
                                      Resources.Load<AudioClip>("Afrodite/musica_afrodite") //Tehem
                                      ) ;
