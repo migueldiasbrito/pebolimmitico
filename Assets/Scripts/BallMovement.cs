@@ -5,12 +5,9 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     GameObject ball;
-<<<<<<< Updated upstream
-    public bool physics;
-=======
+
     bool clickable;
     bool physics;
->>>>>>> Stashed changes
     Vector3 spawnPoint;
     void Start()
     {
@@ -73,20 +70,17 @@ public class BallMovement : MonoBehaviour
             ResetBall();
         }
 
-<<<<<<< Updated upstream
         if(other.gameObject.tag == "Baliza")
         {
             Debug.Log("GOLO!");
             ResetBall();
         }
-=======
         if (other.gameObject.tag == "Goal")
         {
             ResetBall();
             //insert point distribution 
         }
 
->>>>>>> Stashed changes
     }
 
     void ResetBall()
