@@ -23,7 +23,7 @@ public class rotateMatreco : MonoBehaviour
         if (Input.GetKey(KeyCode.J))
         {
             Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
-            m_Rigidbody.MoveRotation(m_Rigidbody.rotation * deltaRotation);
+            m_Rigidbody.AddTorque(new Vector3(0, 0, -1000), ForceMode.Impulse);
         }
        
     }
