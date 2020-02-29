@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     GameObject ball;
-    bool physics;
+    public bool physics;
     Vector3 spawnPoint;
     void Start()
     {
@@ -17,8 +17,8 @@ public class BallMovement : MonoBehaviour
 
     void Update()
     {
-        if (physics == true)
-        {
+        //if (physics == true)
+        //{
             if (Input.GetKey("w"))
             {
                 ball.GetComponent<Rigidbody>().AddForce(new Vector3(3f, 0f, 0f));
@@ -41,9 +41,12 @@ public class BallMovement : MonoBehaviour
 
             if (Input.GetKeyDown("space"))
             {
-                ball.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, -500f));
+                //ball.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, -500f));
+                ball.GetComponent<Rigidbody>().AddForce(new Vector3(4f, -2f, 5f));
+                ball.GetComponent<Rigidbody>().useGravity = true;
+                physics = true;
             }
-        }
+        //}
     }
 
     private void OnMouseDown()

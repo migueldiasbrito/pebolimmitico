@@ -8,6 +8,9 @@ public class MecoController : MonoBehaviour
 
     public string rotateAxis;
     public int torque;
+    public int rotationSpeed;
+
+    public GameObject cano;
 
     private float m_origin;
     private Rigidbody m_Rigidbody;
@@ -17,6 +20,8 @@ public class MecoController : MonoBehaviour
     {
         m_origin = transform.position.x;
         m_Rigidbody = GetComponent<Rigidbody>();
+
+        m_Rigidbody.centerOfMass = cano.transform.localPosition;
     }
 
     // Update is called once per frame
@@ -33,6 +38,10 @@ public class MecoController : MonoBehaviour
 
         float rotation = Input.GetAxis(rotateAxis);
 
-        m_Rigidbody.AddTorque(- rotation * transform.forward * torque);
+        //m_Rigidbody.AddTorque(- rotation * transform.forward * torque, ForceMode.Impulse);
+        //m_Rigidbody.AddRelativeTorque(-rotation * transform.forward * torque);
+        Vector3 m_EulerAngleVelocity = new Vector3(0, 0, - rotation * rotationSpeed);
+        Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
+        m_Rigidbody.MoveRotation(m_Rigidbody.rotation * deltaRotation);
     }
 }
