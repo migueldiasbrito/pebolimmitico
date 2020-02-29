@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameObject ball;
     void Start()
     {
-        
+        ball = this.gameObject;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey("w"))
+        {
+            ball.GetComponent<Rigidbody>().AddForce(new Vector3(3f, 0f, 0f));
+        }
+
+        if (Input.GetKey("s"))
+        {
+            ball.GetComponent<Rigidbody>().AddForce(new Vector3(-3f, 0f, 0f));
+        }
+
+        if (Input.GetKey("a"))
+        {
+            ball.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, 3f));
+        }
+
+        if (Input.GetKey("d"))
+        {
+            ball.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, -3f));
+        }
     }
 }
