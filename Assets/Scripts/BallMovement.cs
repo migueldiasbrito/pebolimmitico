@@ -70,6 +70,7 @@ public class BallMovement : MonoBehaviour
             ResetBall();
         }
 
+<<<<<<< Updated upstream
         if(other.gameObject.tag == "Baliza")
         {
             Debug.Log("GOLO!");

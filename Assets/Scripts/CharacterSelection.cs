@@ -7,7 +7,8 @@ public class CharacterSelection : MonoBehaviour
     GameObject characters;
 
     void Start()
-    { 
+    {
+        characters = GetComponentInParent<>()
         
     }
 
