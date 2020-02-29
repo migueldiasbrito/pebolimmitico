@@ -6,19 +6,19 @@ public class BallMovement : MonoBehaviour
 {
     GameObject ball;
     bool physics;
+    Vector3 spawnPoint;
     void Start()
     {
         ball = this.gameObject;
         ball.GetComponent<Rigidbody>().useGravity = false;
         physics = false;
+        spawnPoint = this.transform.position;
     }
 
     void Update()
     {
         if (physics == true)
         {
-            ball.GetComponent<Rigidbody>().useGravity = true;
-
             if (Input.GetKey("w"))
             {
                 ball.GetComponent<Rigidbody>().AddForce(new Vector3(3f, 0f, 0f));
@@ -50,6 +50,22 @@ public class BallMovement : MonoBehaviour
     {
         // Destroy(gameObject);
         ball.GetComponent<Rigidbody>().AddForce(new Vector3(450f, -200f, 50f));
+        ball.GetComponent<Rigidbody>().useGravity = true;
         physics = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "OoB")
+        {
+            ResetBall();
+        }
+    }
+
+    void ResetBall()
+    {
+        ball.transform.position = spawnPoint;
+        ball.GetComponent<Rigidbody>().useGravity = false;
+        physics = false;
     }
 }
