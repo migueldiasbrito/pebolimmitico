@@ -6,6 +6,9 @@ public class MecoController : MonoBehaviour
     public float speed;
     public float range;
 
+    public string rotateAxis;
+    public int torque;
+
     private float m_origin;
     private Rigidbody m_Rigidbody;
 
@@ -27,5 +30,9 @@ public class MecoController : MonoBehaviour
         transform.position.z);*/
 
         m_Rigidbody.velocity = new Vector3(velocity, m_Rigidbody.velocity.y, m_Rigidbody.velocity.z);
+
+        float rotation = Input.GetAxis(rotateAxis);
+
+        m_Rigidbody.AddTorque(- rotation * transform.forward * torque);
     }
 }

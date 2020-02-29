@@ -231,6 +231,8 @@ MonoBehaviour:
   axis: LeftKeeper
   speed: 5
   range: 1.5
+  rotateAxis: LeftKeeperRotation
+  torque: 2147483647
 --- !u!1 &406221929
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +386,8 @@ MonoBehaviour:
   axis: LeftDefenders
   speed: 5
   range: 1.5
+  rotateAxis: LeftDefendersRotation
+  torque: 2147483647
 --- !u!1 &991205912
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +531,7 @@ PrefabInstance:
     - target: {fileID: 7127825387675478530, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
       propertyPath: m_Constraints
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7127825387675478530, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
@@ -547,7 +551,7 @@ PrefabInstance:
     - target: {fileID: 7127825387675478531, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7127825387675478531, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
@@ -819,6 +823,8 @@ MonoBehaviour:
   axis: RightDefenders
   speed: 5
   range: 1.5
+  rotateAxis: RightDefendersRotation
+  torque: 2147483647
 --- !u!1001 &2945023981346951455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -978,6 +984,8 @@ MonoBehaviour:
   axis: RightKeeper
   speed: 5
   range: 1.5
+  rotateAxis: RightKeeperRotation
+  torque: 2147483647
 --- !u!1001 &6598210867072352044
 PrefabInstance:
   m_ObjectHideFlags: 0
