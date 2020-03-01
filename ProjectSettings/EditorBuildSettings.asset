@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Mess.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/SplashScreen.unity
+    guid: 978af4365262f2d409c85cd093ab7afc
   - enabled: 1
     path: Assets/Scenes/CharacterSelection.unity
     guid: 5d4f093774791e24db81a74d91bf8e5d
