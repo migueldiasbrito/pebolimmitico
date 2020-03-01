@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c90e2a67b41ebd341b19a0706c6820fa
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Alverata
+  fontNames:
+  - Alverata
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f54f3bd01244c7946af0718e17da4078, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
