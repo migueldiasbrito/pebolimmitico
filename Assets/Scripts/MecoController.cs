@@ -28,10 +28,16 @@ public class MecoController : MonoBehaviour
 
     public GameObject cano;
 
+    public AtributePlayer players;
+    public int player;
+    private Player m_Player;
+
     private float m_origin;
     private Rigidbody m_Rigidbody;
 
     private GameObject m_Ball;
+
+    private float m_Mana;
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +46,26 @@ public class MecoController : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody>();
 
         m_Rigidbody.centerOfMass = cano.transform.localPosition;
+
+        if(player == 1)
+        {
+            m_Player = players.p1;
+        }
+        else if (player == 2)
+        {
+            m_Player = players.p2;
+        }
     }
 
     private void Update()
     {
+        
+
+        if(m_Mana >= 100)
+        {
+
+        }
+
         if (Input.GetKeyDown(shotKey))
         {
             // ANIMATE ME!
@@ -136,5 +158,10 @@ public class MecoController : MonoBehaviour
         {
             m_Ball = null;
         }
+    }
+
+    public GameObject GetBall()
+    {
+        return m_Ball;
     }
 }

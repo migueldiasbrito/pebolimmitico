@@ -9,6 +9,8 @@ TagManager:
   - Ballz
   - BalizaP1
   - BalizaP2
+  - Wall
+  - Meco
   layers:
   - Default
   - TransparentFX
