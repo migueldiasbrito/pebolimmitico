@@ -6,29 +6,56 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
+    public Sprite readySprite;
+
     public GameObject chars;
     public GameObject chars2;
+
     public GameObject[] characters;
     public GameObject[] characters2;
+
     public GameObject player1;
     public GameObject player2;
+
     public SelectScreen card;
+
     public Image titleCard;
     public Image titleCard2;
+
+    public GameObject slotPow;
+    public GameObject slotAcc;
+
+    public GameObject slotPow2;
+    public GameObject slotAcc2;
+
+    public GameObject prefabPow;
+    public GameObject prefabAcc;
     //
     public Sprite[] spriterinos;
     public Sprite[] spriterinos2;
+
     Sprite spriten;
     Sprite spriten2;
 
     public Dictionary<Sprite, int> CharID;
     public Dictionary<Sprite, int> CharID2;
 
+    bool Ready1;
+    bool Ready2;
+    bool GameReady;
+
+
     void Start()
     {
+        bool Ready1 = false;
+        bool Ready2 = false;
+        bool StartGame = false;
+
+        StaticForPlayer.idP1 = 2;
+        StaticForPlayer.idP2 = 2;
+
         CharID = new Dictionary<Sprite, int>();
         CharID2 = new Dictionary<Sprite, int>();
-
 
         int i2 = 0;
         int i3 = 0;
@@ -59,18 +86,73 @@ public class CharacterSelection : MonoBehaviour
             characters[i].GetComponentInChildren<CharacterSprite>().sprite = spriterinos[i];
             characters2[i].GetComponentInChildren<CharacterSprite>().sprite = spriterinos2[i];
         }
+
+        SetCharacters();
     }
 
     void Update()
     {
+
+
+    }
+
+    public void SetCharacters()
+    {
+        if(slotPow.transform.childCount != 0)
+        {
+            foreach (Transform t in slotPow.transform)
+            {
+                Destroy(t.gameObject);
+            }
+        }
+        if(slotAcc.transform.childCount != 0)
+        {
+            foreach (Transform t in slotAcc.transform)
+            {
+                Destroy(t.gameObject);
+            }
+        }
+
+        if (slotPow2.transform.childCount != 0)
+        {
+            foreach (Transform t in slotPow2.transform)
+            {
+                Destroy(t.gameObject);
+            }
+        }
+        if (slotAcc2.transform.childCount != 0)
+        {
+            foreach (Transform t in slotAcc2.transform)
+            {
+                Destroy(t.gameObject);
+            }
+        }
+
         int cardID = CharID[characters[2].GetComponentInChildren<CharacterSprite>().sprite];
         titleCard.sprite = card.nameCards[cardID];
         player1.GetComponent<Image>().sprite = characters[2].GetComponentInChildren<CharacterSprite>().sprite;
+
+        if (cardID == 0 || cardID == 1 || cardID == 5)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                GameObject prefabP =  Instantiate(prefabPow, slotPow.transform.position, Quaternion.identity);
+                prefabP.transform.parent = slotPow.transform;
+            }
+        }
 
         int cardID2 = CharID2[characters2[2].GetComponentInChildren<CharacterSprite>().sprite];
         titleCard2.sprite = card.nameCards[cardID2];
         player2.GetComponent<Image>().sprite = characters2[2].GetComponentInChildren<CharacterSprite>().sprite;
 
+        if (cardID2 == 0 || cardID2 == 1 || cardID2 == 5)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                GameObject prefabP = Instantiate(prefabPow, slotPow2.transform.position, Quaternion.identity);
+                prefabP.transform.parent = slotPow2.transform;
+            }
+        }
     }
 
     public void LeftButton1()
@@ -96,6 +178,7 @@ public class CharacterSelection : MonoBehaviour
             }
         }
 
+        SetCharacters();
         StaticForPlayer.idP1 = CharID[characters[2].GetComponentInChildren<CharacterSprite>().sprite];
 
     }
@@ -125,13 +208,16 @@ public class CharacterSelection : MonoBehaviour
             }
         }
 
+        SetCharacters();
         StaticForPlayer.idP1 = CharID[characters[2].GetComponentInChildren<CharacterSprite>().sprite];
 
     }
 
     public void Confirm1()
     {
-        //StaticForPlayer.idP1 = characters[2].GetInstanceID;
+        Ready1 = true;
+        this.gameObject.GetComponent<Image>().sprite = readySprite;
+        CheckGame();
     }
 
     public void LeftButton2()
@@ -157,6 +243,7 @@ public class CharacterSelection : MonoBehaviour
             }
         }
 
+        SetCharacters();
         StaticForPlayer.idP2 = CharID2[characters2[2].GetComponentInChildren<CharacterSprite>().sprite];
 
     }
@@ -187,13 +274,24 @@ public class CharacterSelection : MonoBehaviour
 
         }
 
+        SetCharacters();
         StaticForPlayer.idP2 = CharID2[characters2[2].GetComponentInChildren<CharacterSprite>().sprite];
         Debug.Log("adiugadiub" + StaticForPlayer.idP2);
     }
 
     public void Confirm2()
     {
+        Ready2 = true;
+        this.gameObject.GetComponent<Image>().sprite = readySprite;
+        CheckGame();
+    }
 
+    void CheckGame()
+    {
+        if(Ready1 == true && Ready2 == true)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void StartGame()

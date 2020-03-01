@@ -6,14 +6,8 @@ using UnityEngine.UI;
 public class SelectScreen : MonoBehaviour
 {
     public Sprite[] nameCards;
-    GameObject stats;
-    void Start()
-    {
-        
-    }
 
-    void Update()
+    private void Start()
     {
-        
     }
 }
