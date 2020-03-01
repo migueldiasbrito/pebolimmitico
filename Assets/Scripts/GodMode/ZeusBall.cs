@@ -48,8 +48,8 @@ public class ZeusBall : MonoBehaviour
         {
             if (other.gameObject.tag == "Meco")
             {
-                Debug.Log("ZeusBall hit Meco");
-                fuckedUpObject = other.gameObject;
+                Debug.Log("ZeusBall hit Meco" + other.name);
+                fuckedUpObject = other.gameObject.GetComponent<MecoController>().GetCorrespondingMeco(other);
                 fuckedUpObject.SetActive(false);
                 time = 0;
             }
