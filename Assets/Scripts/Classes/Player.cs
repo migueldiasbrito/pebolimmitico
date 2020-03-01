@@ -10,14 +10,13 @@ public class Player
 
     public float force, acuracy;
 
-    public Player(Sprite spriteMain, Sprite spriteLacaio1, Sprite spriteLacaio2, float force, float acuracy, AudioClip bolaNoMatreco, AudioClip bolaGolo, AudioClip themeSong)
+    public Player(Sprite spriteMain, Sprite spriteLacaio1, Sprite spriteLacaio2, float force, float acuracy, AudioClip bolaGolo, AudioClip themeSong)
     {
         this.spriteMain = spriteMain;
         this.spriteLacaio1 = spriteLacaio1;
         this.spriteLacaio2 = spriteLacaio2;
         this.force = force;
         this.acuracy = acuracy;
-        this.bolaNoMatreco = bolaNoMatreco;
         this.bolaGolo = bolaGolo;
         this.themesong = themeSong;
     }

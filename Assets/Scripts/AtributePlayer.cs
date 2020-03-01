@@ -25,7 +25,7 @@ public class AtributePlayer : MonoBehaviour
         {
             case 1:
                 p1 = genAfrodite();
-                break;
+            break;
 
         }
 
@@ -36,6 +36,38 @@ public class AtributePlayer : MonoBehaviour
 
     }
 
+
+
+    public Player genZeus()
+    {
+        Player Zeus = new Player(Resources.Load<Sprite>("Afrodite/afrodite"), //main
+                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
+                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
+                                     4, //força
+                                     0.5f,//precisao
+                                     Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
+                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite") //Tehem
+                                     );
+
+
+        return Zeus;
+    }
+
+    public Player genAres()
+    {
+        Player Ares = new Player(Resources.Load<Sprite>("Afrodite/afrodite"), //main
+                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
+                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
+                                     4, //força
+                                     0.5f,//precisao
+                                     Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
+                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite") //Tehem
+                                     );
+
+
+        return Ares;
+    }
+
     public Player genAfrodite()
     {
         Player Afrodite = new Player(Resources.Load< Sprite >("Afrodite/afrodite"), //main
@@ -43,11 +75,39 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
                                      4, //força
                                      0.5f,//precisao
-                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite"),//Bola matreco
                                      Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
                                      Resources.Load<AudioClip>("Afrodite/musica_afrodite") //Tehem
                                      ) ;
 
         return Afrodite;
+    }
+
+
+    public Player genMedusa()
+    {
+        Player Medusa = new Player(Resources.Load<Sprite>("Afrodite/afrodite"), //main
+                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
+                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
+                                     4, //força
+                                     0.5f,//precisao
+                                     Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
+                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite") //Tehem
+                                     );
+
+        return Medusa;
+    }
+
+    public Player genCirce()
+    {
+        Player Circe = new Player(Resources.Load<Sprite>("Afrodite/afrodite"), //main
+                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
+                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
+                                     4, //força
+                                     0.5f,//precisao
+                                     Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
+                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite") //Tehem
+                                     );
+
+        return Circe;
     }
 }
