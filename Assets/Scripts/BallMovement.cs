@@ -79,7 +79,8 @@ public class BallMovement : MonoBehaviour
 
         if(other.gameObject.tag == "BalizaP1")
         {
-            Debug.Log("GOLO! P2");
+            Debug.Log("GOLO! P2" + atributePlayer.p1.bolaGolo.name);
+
             atributePlayer.ads.PlayOneShot(atributePlayer.p1.bolaGolo);
             goal1.text = (int.Parse(goal1.text) + 1).ToString();
 
@@ -89,7 +90,7 @@ public class BallMovement : MonoBehaviour
         }
         if (other.gameObject.tag == "BalizaP2")
         {
-            Debug.Log("GOLO! P1");
+            Debug.Log("GOLO! P1" + atributePlayer.p2.bolaGolo.name);
             atributePlayer.ads.PlayOneShot(atributePlayer.p2.bolaGolo);
             goal2.text = (int.Parse(goal2.text) + 1).ToString();
 
