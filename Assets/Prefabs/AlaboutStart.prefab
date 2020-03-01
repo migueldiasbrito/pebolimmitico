@@ -3355,22 +3355,22 @@ PrefabInstance:
     - target: {fileID: 306458345706605033, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
       propertyPath: shotKey
-      value: joystick 1 button 4
+      value: joystick 2 button 4
       objectReference: {fileID: 0}
     - target: {fileID: 306458345706605033, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
       propertyPath: levantamosKey
-      value: joystick 1 button 0
+      value: joystick 2 button 0
       objectReference: {fileID: 0}
     - target: {fileID: 306458345706605033, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
       propertyPath: backpassKey
-      value: joystick 1 button 1
+      value: joystick 2 button 1
       objectReference: {fileID: 0}
     - target: {fileID: 306458345706605033, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
       propertyPath: wtfKey
-      value: joystick 1 button 2
+      value: joystick 2 button 2
       objectReference: {fileID: 0}
     - target: {fileID: 306458345706605033, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
