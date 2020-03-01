@@ -662,6 +662,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 43.88, y: 90.00001, z: 0}
+--- !u!114 &1409295355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4747216175279763254, guid: 8b9773adba2bd034c91e99f1a74d1806,
+    type: 3}
+  m_PrefabInstance: {fileID: 1652657377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218ed20899f6cfb43874fecdf343279e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1652657377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -669,6 +681,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4747216175279763254, guid: 8b9773adba2bd034c91e99f1a74d1806,
+        type: 3}
+      propertyPath: wtfKey
+      value: joystick 1 button 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5017500126617016412, guid: 8b9773adba2bd034c91e99f1a74d1806,
         type: 3}
       propertyPath: m_Name
@@ -731,6 +748,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b9773adba2bd034c91e99f1a74d1806, type: 3}
+--- !u!114 &1652657378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5017500127310492237, guid: 8b9773adba2bd034c91e99f1a74d1806,
+    type: 3}
+  m_PrefabInstance: {fileID: 1652657377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218ed20899f6cfb43874fecdf343279e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1652657379 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5354437953902039792, guid: 8b9773adba2bd034c91e99f1a74d1806,
+    type: 3}
+  m_PrefabInstance: {fileID: 1652657377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218ed20899f6cfb43874fecdf343279e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1878877096
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,8 +782,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1878877098}
   - component: {fileID: 1878877097}
+  - component: {fileID: 1878877099}
   m_Layer: 0
-  m_Name: Zeus
+  m_Name: Specials
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -755,7 +797,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878877096}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb3c092e316468b4db0d0cc5ee90f0bc, type: 3}
   m_Name: 
@@ -766,8 +808,8 @@ MonoBehaviour:
   activateKey: joystick 1 button 6
   m_Mana: 0
   ZeusShotPower: 50
-  mcKeeper: {fileID: 0}
-  mcDefenders: {fileID: 0}
+  mcKeeper: {fileID: 1652657378}
+  mcDefenders: {fileID: 1652657379}
 --- !u!4 &1878877098
 Transform:
   m_ObjectHideFlags: 0
@@ -782,6 +824,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1878877099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878877096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c48d344690894469a833922ad0c1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaRateReload: 10
+  manaRateUse: 100
+  activated: 0
+  activateKey: joystick 1 button 6
+  m_Mana: 0
+  oponentDefenders: {fileID: 1409295355}
+  myDefenders: {fileID: 1652657379}
+  takenDefenders: []
+  takenDefendersColliders: []
 --- !u!1 &2107743370
 GameObject:
   m_ObjectHideFlags: 0
