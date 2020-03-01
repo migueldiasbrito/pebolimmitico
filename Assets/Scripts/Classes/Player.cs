@@ -10,7 +10,9 @@ public class Player
 
     public float force, acuracy;
 
-    public Player(Sprite spriteMain, Sprite spriteLacaio1, Sprite spriteLacaio2, float force, float acuracy, AudioClip bolaGolo, AudioClip themeSong)
+    public GodMode godMode;
+
+    public Player(Sprite spriteMain, Sprite spriteLacaio1, Sprite spriteLacaio2, float force, float acuracy, AudioClip bolaGolo, AudioClip themeSong, GodMode godMode)
     {
         this.spriteMain = spriteMain;
         this.spriteLacaio1 = spriteLacaio1;
@@ -19,5 +21,6 @@ public class Player
         this.acuracy = acuracy;
         this.bolaGolo = bolaGolo;
         this.themesong = themeSong;
+        this.godMode = godMode;
     }
 }

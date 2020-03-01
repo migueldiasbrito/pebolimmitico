@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7127825386456114251}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Meco
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +198,9 @@ GameObject:
   - component: {fileID: 7127825387675478541}
   - component: {fileID: 7127825387675478530}
   - component: {fileID: 7127825387675478531}
+  - component: {fileID: 517752986062008216}
+  - component: {fileID: 306458345706605033}
+  - component: {fileID: 4790900289977957839}
   m_Layer: 0
   m_Name: ferroEbonecos
   m_TagString: Untagged
@@ -251,6 +254,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torque: 0
+--- !u!135 &517752986062008216
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127825387675478540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -3, z: 11.4}
+--- !u!114 &306458345706605033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127825387675478540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218ed20899f6cfb43874fecdf343279e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axis: LeftDefenders
+  speed: 5
+  range: 1.5
+  rotateAxis: LeftDefendersRotation
+  torque: 1
+  rotationSpeed: 500
+  shotKey: joystick 1 button 5
+  shotPower: 10
+  rufoletaKey: 
+  rufoletaPower: 0
+  levantamosKey: joystick 1 button 2
+  backpassKey: joystick 1 button 0
+  backpassPower: 1
+  wtfKey: joystick 1 button 1
+  wtfPower: 5
+  cano: {fileID: 7127825386495870709}
+  players: {fileID: 0}
+  player: 0
+--- !u!135 &4790900289977957839
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127825387675478540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: -3, z: 5.2}
 --- !u!1 &7127825388067229806
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +324,7 @@ GameObject:
   - component: {fileID: 7127825388067229804}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Meco
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

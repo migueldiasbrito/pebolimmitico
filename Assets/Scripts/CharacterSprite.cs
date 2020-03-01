@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class CharacterSprite : MonoBehaviour
 {
     public Sprite sprite;
+    public int id;
+    public GameObject parent;
     void Start()
     {
         sprite = this.gameObject.GetComponent<Image>().sprite;

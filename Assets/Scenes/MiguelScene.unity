@@ -1096,25 +1096,14 @@ MonoBehaviour:
   wtfKey: 
   wtfPower: 0
   cano: {fileID: 2104642529}
+  players: {fileID: 0}
+  player: 0
 --- !u!4 &314376221 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4664430962527624548, guid: 1632ecf6e689efa4aae90582799cfbad,
     type: 3}
   m_PrefabInstance: {fileID: 104814329}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &314376222
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314376218}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: -3.2, z: 9.2}
 --- !u!1 &391930711 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7127825386495870709, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
@@ -2017,12 +2006,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &735435742 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7127825386495870709, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1483994374}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &742656551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,72 +2226,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850788788}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &870019959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7127825387675478540, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1483994374}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &870019960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870019959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218ed20899f6cfb43874fecdf343279e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axis: LeftDefenders
-  speed: 5
-  range: 1.5
-  rotateAxis: LeftDefendersRotation
-  torque: 1
-  rotationSpeed: 500
-  shotKey: joystick 1 button 5
-  shotPower: 10
-  rufoletaKey: 
-  rufoletaPower: 0
-  levantamosKey: joystick 1 button 2
-  backpassKey: joystick 1 button 0
-  backpassPower: 1
-  wtfKey: joystick 1 button 1
-  wtfPower: 5
-  cano: {fileID: 735435742}
 --- !u!4 &870019963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7127825387675478541, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
     type: 3}
   m_PrefabInstance: {fileID: 1483994374}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &870019964
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870019959}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: -3, z: 5.2}
---- !u!135 &870019965
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870019959}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: -3, z: 11.4}
 --- !u!1 &925183293
 GameObject:
   m_ObjectHideFlags: 0
@@ -4490,38 +4413,14 @@ MonoBehaviour:
   wtfKey: joystick 2 button 2
   wtfPower: 5
   cano: {fileID: 391930711}
+  players: {fileID: 0}
+  player: 0
 --- !u!4 &2137537027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7127825387675478541, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
     type: 3}
   m_PrefabInstance: {fileID: 2075038857}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &2137537028
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137537023}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: -3, z: 5.2}
---- !u!135 &2137537029
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137537023}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: -3, z: 11.4}
 --- !u!1 &4587751817851683950 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4664430962527624549, guid: 1632ecf6e689efa4aae90582799cfbad,
@@ -4556,25 +4455,14 @@ MonoBehaviour:
   wtfKey: 
   wtfPower: 0
   cano: {fileID: 769104249}
+  players: {fileID: 0}
+  player: 0
 --- !u!4 &4587751817851683953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4664430962527624548, guid: 1632ecf6e689efa4aae90582799cfbad,
     type: 3}
   m_PrefabInstance: {fileID: 9156263103673473291}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &4587751817851683954
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4587751817851683950}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: -3.2, z: 9.2}
 --- !u!1001 &6598210867072352044
 PrefabInstance:
   m_ObjectHideFlags: 0

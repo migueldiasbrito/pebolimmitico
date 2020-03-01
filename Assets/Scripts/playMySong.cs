@@ -24,10 +24,14 @@ public class playMySong : MonoBehaviour
             if(statp1 != oldStatp1)
             {
                 oldStatp1 = statp1;
+                ads.Stop();
+                ads.PlayOneShot(ReturnToPlay(oldStatp1));
             }
             if (statp2 != oldStatp2)
             {
                 oldStatp2 = statp2;
+                ads.Stop();
+                ads.PlayOneShot(ReturnToPlay(oldStatp2));
             }
 
         }
@@ -52,7 +56,7 @@ public class playMySong : MonoBehaviour
                 return Resources.Load<AudioClip>("Afrodite/musica_afrodite");
 
             case 3:
-                return Resources.Load<AudioClip>("dioniso/musica_dioniso");
+                return Resources.Load<AudioClip>("dionisio/musica_dionisio");
 
             case 4:
                 return Resources.Load<AudioClip>("medusa/musica_medusa");
