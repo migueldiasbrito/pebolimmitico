@@ -42,6 +42,7 @@ public class MecoController : MonoBehaviour
     public SphereCollider[] colliders;
     public GameObject[] mecos;
 
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +59,8 @@ public class MecoController : MonoBehaviour
         {
             m_Player = players.p2;
         }
+
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -72,6 +75,8 @@ public class MecoController : MonoBehaviour
         if (Input.GetKeyDown(shotKey))
         {
             // ANIMATE ME!
+            animator.SetTrigger("Rota");
+
             if (m_Ball != null)
             {
                 if(m_wtfMode)
@@ -90,6 +95,7 @@ public class MecoController : MonoBehaviour
         if (rufoletaKey != "" && Input.GetKeyDown(rufoletaKey))
         {
             // ANIMATE ME!
+            animator.SetTrigger("Roleta");
             if (m_Ball != null)
             {
                 m_Ball.GetComponent<Rigidbody>().AddForce(-transform.right * rufoletaPower, ForceMode.Impulse);
@@ -113,6 +119,7 @@ public class MecoController : MonoBehaviour
         if (backpassKey != "" && Input.GetKeyDown(backpassKey))
         {
             // ANIMATE ME!
+            animator.SetTrigger("Tras");
             if (m_Ball != null)
             {
                 m_Ball.GetComponent<Rigidbody>().AddForce(transform.right * backpassPower, ForceMode.Impulse);

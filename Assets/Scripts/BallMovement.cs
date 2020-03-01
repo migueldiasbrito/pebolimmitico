@@ -83,7 +83,7 @@ public class BallMovement : MonoBehaviour
             atributePlayer.ads.PlayOneShot(atributePlayer.p1.bolaGolo);
             goal1.text = (int.Parse(goal1.text) + 1).ToString();
 
-            if (goal1.text.Equals("2")) SceneManager.LoadScene(1);
+            if (goal1.text.Equals("3")) SceneManager.LoadScene(1);
             
             ResetBall();
         }
@@ -93,7 +93,7 @@ public class BallMovement : MonoBehaviour
             atributePlayer.ads.PlayOneShot(atributePlayer.p2.bolaGolo);
             goal2.text = (int.Parse(goal2.text) + 1).ToString();
 
-            if (goal2.text.Equals("2")) SceneManager.LoadScene(1);
+            if (goal2.text.Equals("3")) SceneManager.LoadScene(1);
             ResetBall();
         }
         if (other.gameObject.tag == "Goal")
@@ -106,10 +106,29 @@ public class BallMovement : MonoBehaviour
 
     void ResetBall()
     {
+
+
         ball.transform.position = spawnPoint;
-        ball.GetComponent<Rigidbody>().useGravity = false;
-        ball.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
-        physics = false;
+        /* ball.GetComponent<Rigidbody>().useGravity = false;
+         ball.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+         physics = false;*/
+
+        int r = Random.Range(1, 3);
+
+
+        if (r%2 == 0)
+        {
+            ball.GetComponent<Rigidbody>().AddForce(new Vector3(4f, -2f, 5f));
+            ball.GetComponent<Rigidbody>().useGravity = true;
+            physics = true;
+        }
+        else
+        {
+            ball.GetComponent<Rigidbody>().AddForce(new Vector3(4f, -2f, -5f));
+            ball.GetComponent<Rigidbody>().useGravity = true;
+            physics = true;
+        }
+
         clickable = true;
     }
 
