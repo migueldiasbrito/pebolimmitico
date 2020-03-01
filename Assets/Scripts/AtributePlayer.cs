@@ -16,7 +16,7 @@ public class AtributePlayer : MonoBehaviour
     public MecoController mecop1, mecop1Def;
     public MecoController mecop2, mecop2Def;
     public GameObject Ball;
-    public GameObject Arrow;
+    public GameObject Arrow, Arrow2;
     public Transform k1, d11, d12, k2, d21, d22;
 
     void Start()
@@ -34,6 +34,7 @@ public class AtributePlayer : MonoBehaviour
                 (p1.godMode as Ares).Keeper = k1;
                 (p1.godMode as Ares).D1 = d11;
                 (p1.godMode as Ares).D2 = d12;
+                (p1.godMode as Ares).Arrow = Arrow;
                 break;
             case 2:
                 p1 = genAfrodite();
@@ -72,6 +73,7 @@ public class AtributePlayer : MonoBehaviour
                 (p2.godMode as Ares).Keeper = k2;
                 (p2.godMode as Ares).D1 = d21;
                 (p2.godMode as Ares).D2 = d22;
+                (p1.godMode as Ares).Arrow = Arrow2;
                 break;
             case 2:
                 p2 = genAfrodite();
@@ -146,7 +148,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("zeus/golo_zeus"), //Golo
                                      Resources.Load<AudioClip>("zeus/musica_zeus"), //Tehem
                                      gm,
-                                     "Zeus"
+                                     "Zeus",
+                                      Resources.Load<Sprite>("zeus/zeus-circulo")
                                      );
 
 
@@ -159,7 +162,6 @@ public class AtributePlayer : MonoBehaviour
 
         gm.manaRateReload = 10;
         gm.manaRateUse = 10;
-        gm.Arrow = Arrow;
         gm.interval = 1;
         gm.horizontalSpeed1 = 650;
         gm.horizontalSpeed2 = 350;
@@ -174,7 +176,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("ares/golo_ares"), //Golo
                                      Resources.Load<AudioClip>("ares/musica_ares"), //Tehem
                                      gm,
-                                     "Ares"
+                                     "Ares",
+                                     Resources.Load<Sprite>("ares/ares-circulo")
                                      );
 
 
@@ -196,7 +199,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
                                      Resources.Load<AudioClip>("Afrodite/musica_afrodite"), //Tehem
                                      gm,
-                                     "Afrodite"
+                                     "Afrodite",
+                                     Resources.Load<Sprite>("Afrodite/afrodite-circulo")
                                      ) ;
 
         return Afrodite;
@@ -218,7 +222,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("medusa/golo_medusa"), //Golo
                                      Resources.Load<AudioClip>("medusa/musica_medusa"), //Tehem
                                      gm,
-                                     "Medusa"
+                                     "Medusa",
+                                     Resources.Load<Sprite>("medusa/medusa-circulo")
                                      );
 
         return Medusa;
@@ -241,7 +246,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("dionisio/golo_dionisio"), //Golo
                                      Resources.Load<AudioClip>("dionisio/musica_dionisio"), //Tehem
                                      gm,
-                                     "Dionisio"
+                                     "Dionisio",
+                                      Resources.Load<Sprite>("dionisio/dionisio-circulo")
                                      );
 
         return Dionisio;
@@ -258,7 +264,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("circe/golo_circe"), //Golo
                                      Resources.Load<AudioClip>("circe/musica_circe"), //Tehem
                                      gm,
-                                     "Circe"
+                                     "Circe",
+                                     Resources.Load<Sprite>("circe/circe-circulo")
                                      );
 
         return Circe;

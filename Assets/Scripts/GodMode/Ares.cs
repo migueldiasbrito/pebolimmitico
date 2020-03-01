@@ -17,6 +17,8 @@ public class Ares : GodMode
     public float timeSinceLastThrow;
     public GodMode otherGm;
 
+    public bool mirror = false;
+
     public override bool StartGodMode()
     {
         timeSinceLastThrow = interval;
@@ -43,6 +45,12 @@ public class Ares : GodMode
 
             arrow1.GetComponent<AresArrow>().myGM = this;
             arrow1.GetComponent<AresArrow>().otherGM = otherGm;
+            
+            arrow2.GetComponent<AresArrow>().myGM = this;
+            arrow2.GetComponent<AresArrow>().otherGM = otherGm;
+            
+            arrow3.GetComponent<AresArrow>().myGM = this;
+            arrow3.GetComponent<AresArrow>().otherGM = otherGm;
 
 
 
