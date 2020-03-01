@@ -53,6 +53,7 @@ public class ZeusBall : MonoBehaviour
                 Debug.Log("ZeusBall hit Meco" + other.name);
                 fuckedUpObject = other.gameObject.GetComponent<MecoController>().GetCorrespondingMeco(other);
                 fuckedUpObject.SetActive(false);
+                fuckedUpCollider = other;
                 fuckedUpCollider.enabled = false;
                 time = 0;
             }
