@@ -9,7 +9,6 @@ public class CharacterSprite : MonoBehaviour
     public Sprite sprite;
     void Start()
     {
-        sprite = this.gameObject.GetComponent<Image>().sprite;
     }
 
     void Update()
