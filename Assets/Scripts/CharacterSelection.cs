@@ -8,10 +8,13 @@ public class CharacterSelection : MonoBehaviour
 {
     public GameObject chars;
     public GameObject chars2;
-    private GameObject[] characters;
-    private GameObject[] characters2;
+    public GameObject[] characters;
+    public GameObject[] characters2;
     public GameObject player1;
     public GameObject player2;
+    public SelectScreen card;
+    public Image titleCard;
+    public Image titleCard2;
     //
     public Sprite[] spriterinos;
     public Sprite[] spriterinos2;
@@ -19,19 +22,28 @@ public class CharacterSelection : MonoBehaviour
     Sprite spriten2;
 
     public Dictionary<Sprite, int> CharID;
+    public Dictionary<Sprite, int> CharID2;
 
     void Start()
     {
         CharID = new Dictionary<Sprite, int>();
+        CharID2 = new Dictionary<Sprite, int>();
+
 
         int i2 = 0;
+        int i3 = 0;
 
-        foreach(Sprite s in spriterinos)
+        foreach (Sprite s in spriterinos)
         {
             CharID.Add(s, i2);
             i2++;
         }
 
+        foreach (Sprite s in spriterinos2)
+        {
+            CharID2.Add(s, i3);
+            i3++;
+        }
 
         characters = new GameObject[chars.transform.childCount];
         characters2 = new GameObject[chars2.transform.childCount];
@@ -47,18 +59,18 @@ public class CharacterSelection : MonoBehaviour
             characters[i].GetComponentInChildren<CharacterSprite>().sprite = spriterinos[i];
             characters2[i].GetComponentInChildren<CharacterSprite>().sprite = spriterinos2[i];
         }
-
-
-        for(int i = 0; i<=4; i++)
-        {
-            characters2[i].GetComponentInChildren<CharacterSprite>().id = i;
-        }
     }
 
     void Update()
     {
+        int cardID = CharID[characters[2].GetComponentInChildren<CharacterSprite>().sprite];
+        titleCard.sprite = card.nameCards[cardID];
         player1.GetComponent<Image>().sprite = characters[2].GetComponentInChildren<CharacterSprite>().sprite;
+
+        int cardID2 = CharID2[characters2[2].GetComponentInChildren<CharacterSprite>().sprite];
+        titleCard2.sprite = card.nameCards[cardID2];
         player2.GetComponent<Image>().sprite = characters2[2].GetComponentInChildren<CharacterSprite>().sprite;
+
     }
 
     public void LeftButton1()
@@ -83,6 +95,8 @@ public class CharacterSelection : MonoBehaviour
                 spriterinos[5] = spriten;
             }
         }
+
+        StaticForPlayer.idP1 = CharID[characters[2].GetComponentInChildren<CharacterSprite>().sprite];
 
     }
 
@@ -143,6 +157,8 @@ public class CharacterSelection : MonoBehaviour
             }
         }
 
+        StaticForPlayer.idP2 = CharID2[characters2[2].GetComponentInChildren<CharacterSprite>().sprite];
+
     }
 
     public void RightButton2()
@@ -171,7 +187,7 @@ public class CharacterSelection : MonoBehaviour
 
         }
 
-        StaticForPlayer.idP2 = CharID[characters2[2].GetComponentInChildren<CharacterSprite>().sprite];
+        StaticForPlayer.idP2 = CharID2[characters2[2].GetComponentInChildren<CharacterSprite>().sprite];
         Debug.Log("adiugadiub" + StaticForPlayer.idP2);
     }
 
