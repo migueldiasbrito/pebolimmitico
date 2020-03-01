@@ -12,6 +12,12 @@ public class AtributePlayer : MonoBehaviour
     
     public GameObject godPieceP1 , godPieceP2;
     public GameObject lacaioPiece1P1, lacaioPiece2P1, lacaioPiece1P2, lacaioPiece2P2;
+
+    public MecoController mecop1, mecop1Def;
+    public MecoController mecop2, mecop2Def;
+    public GameObject Ball;
+    public GameObject Arrow;
+    public Transform k1, d11, d12, k2, d21, d22;
     void Start()
     {
 
@@ -19,18 +25,29 @@ public class AtributePlayer : MonoBehaviour
         {
             case 0:
                 p1 = genZeus();
-            break;
+                (p1.godMode as Zeus).mcDefenders = mecop1Def;
+                (p1.godMode as Zeus).mcKeeper = mecop1;
+                break;
             case 1:
                 p1 = genAres();
+                (p1.godMode as Ares).Keeper = k1;
+                (p1.godMode as Ares).D1 = d11;
+                (p1.godMode as Ares).D2 = d12;
                 break;
             case 2:
                 p1 = genAfrodite();
+                (p1.godMode as Afrodite).myDefenders = mecop1Def;
+                (p1.godMode as Afrodite).oponentDefenders = mecop2Def;
                 break;
             case 3:
                 p1 = genDionisio();
+                (p1.godMode as Baco).myDefenders = mecop1Def;
+                (p1.godMode as Baco).myKeeper = mecop1;
                 break;
             case 4:
                 p1 = genMedusa();
+                (p1.godMode as Medusa).oponentKeeper = mecop2;
+                (p1.godMode as Medusa).oponentDefenders = mecop2Def;
                 break;
             case 5:
                 p1 = genCirce();
@@ -42,18 +59,29 @@ public class AtributePlayer : MonoBehaviour
         {
             case 0:
                 p2 = genZeus();
+                (p2.godMode as Zeus).mcDefenders = mecop2Def;
+                (p2.godMode as Zeus).mcKeeper = mecop2;
                 break;
             case 1:
                 p2 = genAres();
+                (p2.godMode as Ares).Keeper = k2;
+                (p2.godMode as Ares).D1 = d21;
+                (p2.godMode as Ares).D2 = d22;
                 break;
             case 2:
                 p2 = genAfrodite();
+                (p2.godMode as Afrodite).myDefenders = mecop2Def;
+                (p2.godMode as Afrodite).oponentDefenders = mecop1Def;
                 break;
             case 3:
                 p2 = genDionisio();
+                (p2.godMode as Baco).myDefenders = mecop2Def;
+                (p2.godMode as Baco).myKeeper = mecop2;
                 break;
             case 4:
                 p2 = genMedusa();
+                (p2.godMode as Medusa).oponentKeeper = mecop1;
+                (p2.godMode as Medusa).oponentDefenders = mecop1Def;
                 break;
             case 5:
                 p2 = genCirce();
@@ -61,6 +89,18 @@ public class AtributePlayer : MonoBehaviour
 
         }
 
+        if (StaticForPlayer.idP1 == 1)
+        {
+            (p1.godMode as Ares).otherGm = p2.godMode;
+        }
+
+        if (StaticForPlayer.idP2 == 1)
+        {
+            (p2.godMode as Ares).otherGm = p1.godMode;
+        }
+
+        p1.godMode.activateKey = "joystick 1 button 6";
+        p2.godMode.activateKey = "joystick 2 button 6";
 
 
         godPieceP1.GetComponent<SpriteRenderer>().sprite = p1.spriteMain;
@@ -80,7 +120,15 @@ public class AtributePlayer : MonoBehaviour
 
     public Player genZeus()
     {
-        GodMode gm = gameObject.AddComponent<Zeus>();
+        Zeus gm = gameObject.AddComponent<Zeus>();
+
+        gm.manaRateReload = 10;
+        gm.manaRateUse = 100;
+        gm.activated = false;
+        gm.m_Mana = 0;
+        gm.ZeusShotPower = 50;
+  
+
         Player Zeus = new Player(Resources.Load<Sprite>("zeus/zeus"), //main
                                      Resources.Load<Sprite>("zeus/zeus"), //lacio 1
                                      Resources.Load<Sprite>("zeus/zeus"), //lacio2
@@ -98,7 +146,17 @@ public class AtributePlayer : MonoBehaviour
 
     public Player genAres()
     {
-        GodMode gm = gameObject.AddComponent<Ares>();
+        Ares gm = gameObject.AddComponent<Ares>();
+
+        gm.manaRateReload = 10;
+        gm.manaRateUse = 10;
+        gm.Arrow = Arrow;
+        gm.interval = 1;
+        gm.horizontalSpeed1 = 650;
+        gm.horizontalSpeed2 = 350;
+        gm.verticalSpeed1 = 175;
+        gm.verticalSpeed2 = 75;
+
         Player Ares = new Player(Resources.Load<Sprite>("ares/ares"), //main
                                      Resources.Load<Sprite>("ares/ares"), //lacio 1
                                      Resources.Load<Sprite>("ares/ares"), //lacio2
@@ -117,6 +175,10 @@ public class AtributePlayer : MonoBehaviour
     public Player genAfrodite()
     {
         GodMode gm = gameObject.AddComponent<Afrodite>();
+        
+        gm.manaRateReload = 10;
+        gm.manaRateUse = 10;
+
         Player Afrodite = new Player(Resources.Load< Sprite >("Afrodite/afrodite"), //main
                                      Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
                                      Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
@@ -135,6 +197,10 @@ public class AtributePlayer : MonoBehaviour
     public Player genMedusa()
     {
         GodMode gm = gameObject.AddComponent<Medusa>();
+
+        gm.manaRateReload = 10;
+        gm.manaRateUse = 10;
+
         Player Medusa = new Player(Resources.Load<Sprite>("medusa/medusa"), //main
                                      Resources.Load<Sprite>("medusa/medusa"), //lacio 1
                                      Resources.Load<Sprite>("medusa/medusa"), //lacio2
@@ -152,7 +218,12 @@ public class AtributePlayer : MonoBehaviour
 
     public Player genDionisio()
     {
-        GodMode gm = gameObject.AddComponent<Baco>();
+        Baco gm = gameObject.AddComponent<Baco>();
+
+        gm.manaRateReload = 10;
+        gm.manaRateUse = 10;
+        gm.ball = Ball;
+
         Player Dionisio = new Player(Resources.Load<Sprite>("dionisio/dionisio"), //main
                                      Resources.Load<Sprite>("dionisio/dionisio"), //lacio 1
                                      Resources.Load<Sprite>("dionisio/dionisio"), //lacio2
