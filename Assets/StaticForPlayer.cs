@@ -6,6 +6,6 @@ public static class StaticForPlayer
 {
 
     public static int idP1 =1;
-    public static int idP2 =1;
+    public static int idP2 =5;
 
 }

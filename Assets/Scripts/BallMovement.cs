@@ -16,6 +16,13 @@ public class BallMovement : MonoBehaviour
 
     public Text goal1;
     public Text goal2;
+
+    public AudioClip Intro, Table, Meco;
+
+    AudioSource audioSource;
+
+    bool started = false;
+
     void Start()
     {
         clickable = true;
@@ -23,10 +30,19 @@ public class BallMovement : MonoBehaviour
         ball.GetComponent<Rigidbody>().useGravity = false;
         physics = false;
         spawnPoint = this.transform.position;
+
+        audioSource = GetComponent<AudioSource>();
+        ResetBall();
     }
 
     void Update()
     {
+        if (started)
+        {
+            audioSource.PlayOneShot(Intro);
+            started = false;
+        }
+
         //if (physics == true)
         //{
             if (Input.GetKey("w"))
@@ -85,6 +101,8 @@ public class BallMovement : MonoBehaviour
             goal1.text = (int.Parse(goal1.text) + 1).ToString();
 
             if (goal1.text.Equals("3")) SceneManager.LoadScene(1);
+
+            //audioSource.Stop();
             
             ResetBall();
         }
@@ -95,12 +113,27 @@ public class BallMovement : MonoBehaviour
             goal2.text = (int.Parse(goal2.text) + 1).ToString();
 
             if (goal2.text.Equals("3")) SceneManager.LoadScene(1);
+
+            //audioSource.Stop();
+
             ResetBall();
         }
         if (other.gameObject.tag == "Goal")
         {
             ResetBall();
             //insert point distribution 
+        }
+
+
+        if (other.gameObject.tag == "Wall")
+        {
+            audioSource.PlayOneShot(Table);
+        }
+
+
+        if (other.gameObject.tag == "Meco")
+        {
+            audioSource.PlayOneShot(Meco);
         }
 
     }
@@ -131,6 +164,14 @@ public class BallMovement : MonoBehaviour
         }
 
         clickable = true;
+
+        //audioSource.PlayOneShot(Intro);
+        //audioSource.Play();
+    }
+
+    public void PlayMeco()
+    {
+        audioSource.PlayOneShot(Meco);
     }
 
 }

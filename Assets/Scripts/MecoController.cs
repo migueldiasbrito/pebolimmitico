@@ -89,6 +89,8 @@ public class MecoController : MonoBehaviour
                 {
                     m_Ball.GetComponent<Rigidbody>().AddForce(-transform.right * shotPower, ForceMode.Impulse);
                 }
+
+                m_Ball.GetComponent<BallMovement>().PlayMeco();
             }
         }
 
@@ -99,6 +101,7 @@ public class MecoController : MonoBehaviour
             if (m_Ball != null)
             {
                 m_Ball.GetComponent<Rigidbody>().AddForce(-transform.right * rufoletaPower, ForceMode.Impulse);
+                m_Ball.GetComponent<BallMovement>().PlayMeco();
             }
         }
 
