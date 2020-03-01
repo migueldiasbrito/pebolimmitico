@@ -395,6 +395,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &433459271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5017500127939018917, guid: 8b9773adba2bd034c91e99f1a74d1806,
+    type: 3}
+  m_PrefabInstance: {fileID: 1652657377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &599241910 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5017500126745899633, guid: 8b9773adba2bd034c91e99f1a74d1806,
@@ -693,11 +699,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4747216175279763254, guid: 8b9773adba2bd034c91e99f1a74d1806,
-        type: 3}
-      propertyPath: wtfKey
-      value: joystick 1 button 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5017500126617016412, guid: 8b9773adba2bd034c91e99f1a74d1806,
         type: 3}
       propertyPath: m_Name
@@ -802,6 +803,7 @@ GameObject:
   - component: {fileID: 1878877097}
   - component: {fileID: 1878877099}
   - component: {fileID: 1878877100}
+  - component: {fileID: 1878877101}
   m_Layer: 0
   m_Name: Specials
   m_TagString: Untagged
@@ -870,7 +872,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878877096}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83c0090389223004b9ae2e50bc7ae8af, type: 3}
   m_Name: 
@@ -886,6 +888,26 @@ MonoBehaviour:
   - {fileID: 1689442493}
   - {fileID: 1163214845}
   - {fileID: 599241910}
+--- !u!114 &1878877101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878877096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799ca3e72e96f5a4b8ab4cd496d4f4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manaRateReload: 10
+  manaRateUse: 10
+  activated: 0
+  activateKey: joystick 1 button 6
+  m_Mana: 0
+  ball: {fileID: 433459271}
+  myDefenders: {fileID: 1652657379}
+  myKeeper: {fileID: 1652657378}
 --- !u!114 &1891696847 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2143586092, guid: 8b9773adba2bd034c91e99f1a74d1806,
