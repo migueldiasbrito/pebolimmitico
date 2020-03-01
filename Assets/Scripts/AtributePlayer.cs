@@ -118,11 +118,11 @@ public class AtributePlayer : MonoBehaviour
         godPieceP2.GetComponent<SpriteRenderer>().sprite = p2.spriteMain;
 
 
-        lacaioPiece1P1.GetComponent<SpriteRenderer>().sprite = p1.spriteMain;
-        lacaioPiece1P2.GetComponent<SpriteRenderer>().sprite = p1.spriteMain;
+        lacaioPiece1P1.GetComponent<SpriteRenderer>().sprite = p1.spriteLacaio1;
+        lacaioPiece1P2.GetComponent<SpriteRenderer>().sprite = p1.spriteLacaio2;
 
-        lacaioPiece2P1.GetComponent<SpriteRenderer>().sprite = p2.spriteMain;
-        lacaioPiece2P2.GetComponent<SpriteRenderer>().sprite = p2.spriteMain;
+        lacaioPiece2P1.GetComponent<SpriteRenderer>().sprite = p2.spriteLacaio1;
+        lacaioPiece2P2.GetComponent<SpriteRenderer>().sprite = p2.spriteLacaio2;
         ads = this.GetComponent<AudioSource>();
 
     }
@@ -141,8 +141,8 @@ public class AtributePlayer : MonoBehaviour
   
 
         Player Zeus = new Player(Resources.Load<Sprite>("zeus/zeus"), //main
-                                     Resources.Load<Sprite>("zeus/zeus"), //lacio 1
-                                     Resources.Load<Sprite>("zeus/zeus"), //lacio2
+                                      Resources.Load<Sprite>("Generics/mal"), //lacio 1
+                                     Resources.Load<Sprite>("Generics/fem"), //lacio2
                                      4, //força
                                      0.5f,//precisao
                                      Resources.Load<AudioClip>("zeus/golo_zeus"), //Golo
@@ -169,8 +169,8 @@ public class AtributePlayer : MonoBehaviour
         gm.verticalSpeed2 = 75;
 
         Player Ares = new Player(Resources.Load<Sprite>("ares/ares"), //main
-                                     Resources.Load<Sprite>("ares/ares"), //lacio 1
-                                     Resources.Load<Sprite>("ares/ares"), //lacio2
+                                       Resources.Load<Sprite>("Generics/mal"), //lacio 1
+                                     Resources.Load<Sprite>("Generics/fem"), //lacio2
                                      4, //força
                                      0.5f,//precisao
                                      Resources.Load<AudioClip>("ares/golo_ares"), //Golo
@@ -192,8 +192,8 @@ public class AtributePlayer : MonoBehaviour
         gm.manaRateUse = 10;
 
         Player Afrodite = new Player(Resources.Load< Sprite >("Afrodite/afrodite"), //main
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
+                                     Resources.Load<Sprite>("Generics/mal"), //lacio 1
+                                     Resources.Load<Sprite>("Generics/fem"), //lacio2
                                      4, //força
                                      0.5f,//precisao
                                      Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
@@ -215,8 +215,8 @@ public class AtributePlayer : MonoBehaviour
         gm.manaRateUse = 10;
 
         Player Medusa = new Player(Resources.Load<Sprite>("medusa/medusa"), //main
-                                     Resources.Load<Sprite>("medusa/medusa"), //lacio 1
-                                     Resources.Load<Sprite>("medusa/medusa"), //lacio2
+                                    Resources.Load<Sprite>("Generics/mal"), //lacio 1
+                                     Resources.Load<Sprite>("Generics/fem"), //lacio2
                                      4, //força
                                      0.5f,//precisao
                                      Resources.Load<AudioClip>("medusa/golo_medusa"), //Golo
@@ -239,8 +239,8 @@ public class AtributePlayer : MonoBehaviour
         gm.ball = Ball;
 
         Player Dionisio = new Player(Resources.Load<Sprite>("dionisio/dionisio"), //main
-                                     Resources.Load<Sprite>("dionisio/dionisio"), //lacio 1
-                                     Resources.Load<Sprite>("dionisio/dionisio"), //lacio2
+                        Resources.Load<Sprite>("Generics/mal"), //lacio 1
+                                     Resources.Load<Sprite>("Generics/fem"), //lacio2
                                      4, //força
                                      0.5f,//precisao
                                      Resources.Load<AudioClip>("dionisio/golo_dionisio"), //Golo
@@ -257,8 +257,8 @@ public class AtributePlayer : MonoBehaviour
     {
         GodMode gm = gameObject.AddComponent<Circe>();
         Player Circe = new Player(Resources.Load<Sprite>("circe/circe"), //main
-                                     Resources.Load<Sprite>("circe/circe"), //lacio 1
-                                     Resources.Load<Sprite>("circe/circe"), //lacio2
+                                     Resources.Load<Sprite>("Generics/mal"), //lacio 1
+                                     Resources.Load<Sprite>("Generics/fem"), //lacio2
                                      4, //força
                                      0.5f,//precisao
                                      Resources.Load<AudioClip>("circe/golo_circe"), //Golo
