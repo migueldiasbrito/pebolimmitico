@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mess.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelection.unity
+    guid: 5d4f093774791e24db81a74d91bf8e5d
+  - enabled: 1
+    path: Assets/Scenes/Working final.unity
+    guid: e7f80cb5d1774bb45ae89a46f0fa4e5e
   m_configObjects: {}

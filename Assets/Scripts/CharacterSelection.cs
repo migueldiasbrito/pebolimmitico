@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterSelection : MonoBehaviour
 {
@@ -17,8 +18,21 @@ public class CharacterSelection : MonoBehaviour
     Sprite spriten;
     Sprite spriten2;
 
+    public Dictionary<Sprite, int> CharID;
+
     void Start()
     {
+        CharID = new Dictionary<Sprite, int>();
+
+        int i2 = 0;
+
+        foreach(Sprite s in spriterinos)
+        {
+            CharID.Add(s, i2);
+            i2++;
+        }
+
+
         characters = new GameObject[chars.transform.childCount];
         characters2 = new GameObject[chars2.transform.childCount];
 
@@ -34,7 +48,11 @@ public class CharacterSelection : MonoBehaviour
             characters2[i].GetComponentInChildren<CharacterSprite>().sprite = spriterinos2[i];
         }
 
-        Debug.Log(characters[2]);
+
+        for(int i = 0; i<=4; i++)
+        {
+            characters2[i].GetComponentInChildren<CharacterSprite>().id = i;
+        }
     }
 
     void Update()
@@ -50,7 +68,6 @@ public class CharacterSelection : MonoBehaviour
             if (i == 0)
             {
                 spriten = spriterinos[0];
-                Debug.Log(spriten);
             }
 
             if (i != characters.Length - 1)
@@ -62,14 +79,11 @@ public class CharacterSelection : MonoBehaviour
             else
             {
                 characters[i].GetComponentInChildren<CharacterSprite>().sprite = spriterinos[5];
-                Debug.Log(spriten);
                 spriterinos[4] = spriterinos[5];
                 spriterinos[5] = spriten;
             }
         }
 
-        Debug.Log(spriterinos);
-        Debug.Log(characters);
     }
 
     public void RightButton1()
@@ -79,7 +93,6 @@ public class CharacterSelection : MonoBehaviour
             if (i == 0)
             {
                 spriten = spriterinos[5];
-                Debug.Log(spriten);
                 // characters[0].GetComponentInChildren<CharacterSprite>().sprite = spriterinos[5];
             }
 
@@ -87,8 +100,6 @@ public class CharacterSelection : MonoBehaviour
             {
                 characters[characters.Length - i - 1].GetComponentInChildren<CharacterSprite>().sprite = characters[characters.Length - i - 2].GetComponentInChildren<CharacterSprite>().sprite;
                 spriterinos[6 - i - 1] = spriterinos[6 - i - 2];
-                Debug.Log(spriten);
-                Debug.Log(characters[0].GetComponentInChildren<CharacterSprite>().sprite);
             }
 
             else
@@ -97,13 +108,10 @@ public class CharacterSelection : MonoBehaviour
                 spriterinos[0] = spriten;
 
                 characters[0].GetComponentInChildren<CharacterSprite>().sprite = spriten;
-                Debug.Log(characters[0].GetComponentInChildren<CharacterSprite>().sprite);
-                Debug.Log(spriten);
             }
         }
 
-        Debug.Log(spriterinos);
-        Debug.Log(characters);
+        StaticForPlayer.idP1 = CharID[characters[2].GetComponentInChildren<CharacterSprite>().sprite];
 
     }
 
@@ -119,7 +127,6 @@ public class CharacterSelection : MonoBehaviour
             if (i == 0)
             {
                 spriten2 = spriterinos2[0];
-                Debug.Log(spriten2);
             }
 
             if (i != characters2.Length - 1)
@@ -131,53 +138,51 @@ public class CharacterSelection : MonoBehaviour
             else
             {
                 characters2[i].GetComponentInChildren<CharacterSprite>().sprite = spriterinos2[5];
-                Debug.Log(spriten2);
                 spriterinos2[4] = spriterinos2[5];
                 spriterinos2[5] = spriten2;
             }
         }
 
-        Debug.Log(spriterinos);
-        Debug.Log(characters);
     }
 
     public void RightButton2()
     {
-      for (int i = 0; i < characters2.Length; i++)
+        for (int i = 0; i < characters2.Length; i++)
         {
             if (i == 0)
-        {
-            spriten2 = spriterinos2[5];
-            Debug.Log(spriten2);
-            // characters[0].GetComponentInChildren<CharacterSprite>().sprite = spriterinos[5];
+            {
+                spriten2 = spriterinos2[5];
+                // characters[0].GetComponentInChildren<CharacterSprite>().sprite = spriterinos[5];
+            }
+
+            if (i != characters2.Length - 1)
+            {
+                characters2[characters2.Length - i - 1].GetComponentInChildren<CharacterSprite>().sprite = characters2[characters2.Length - i - 2].GetComponentInChildren<CharacterSprite>().sprite;
+                spriterinos2[6 - i - 1] = spriterinos2[6 - i - 2];
+            }
+
+            else
+            {
+                spriterinos2[1] = spriterinos2[0];
+                spriterinos2[0] = spriten2;
+
+                characters2[0].GetComponentInChildren<CharacterSprite>().sprite = spriten2;
+            }
+
         }
 
-        if (i != characters2.Length - 1)
-        {
-            characters2[characters2.Length - i - 1].GetComponentInChildren<CharacterSprite>().sprite = characters2[characters2.Length - i - 2].GetComponentInChildren<CharacterSprite>().sprite;
-            spriterinos2[6 - i - 1] = spriterinos2[6 - i - 2];
-            Debug.Log(spriten2);
-            Debug.Log(characters2[0].GetComponentInChildren<CharacterSprite>().sprite);
-        }
-
-        else
-        {
-            spriterinos2[1] = spriterinos2[0];
-            spriterinos2[0] = spriten2;
-
-            characters2[0].GetComponentInChildren<CharacterSprite>().sprite = spriten2;
-            Debug.Log(characters2[0].GetComponentInChildren<CharacterSprite>().sprite);
-            Debug.Log(spriten2);
-        }
-        }
-
-        Debug.Log(spriterinos2);
-        Debug.Log(characters2);
-     }
+        StaticForPlayer.idP2 = CharID[characters2[2].GetComponentInChildren<CharacterSprite>().sprite];
+        Debug.Log("adiugadiub" + StaticForPlayer.idP2);
+    }
 
     public void Confirm2()
     {
 
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(2);
     }
 }
 
