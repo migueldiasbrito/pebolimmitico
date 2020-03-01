@@ -6,6 +6,8 @@ public class GodMode : MonoBehaviour
     public float manaRateUse;
     public bool activated;
     public string activateKey = "";
+    public AudioClip adC;
+    public AudioSource adS;
 
     /*protected */ public float m_Mana;
 
@@ -20,6 +22,8 @@ public class GodMode : MonoBehaviour
             m_Mana = Mathf.Min(100, m_Mana + Time.deltaTime * manaRateReload);
 
             activated = m_Mana == 100 && Input.GetKeyDown(activateKey) && StartGodMode();
+
+            if (activated) adS.PlayOneShot(adC);
         }
         
         if(activated)

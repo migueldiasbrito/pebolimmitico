@@ -7,14 +7,14 @@ public class Player
     public string nome;
     public Sprite spriteMain;
     public Sprite spriteLacaio1, spriteLacaio2;
-    public AudioClip bolaNoMatreco, bolaGolo, themesong;
+    public AudioClip bolaNoMatreco, bolaGolo, themesong, especial;
     public Sprite moldura;
 
     public float force, acuracy;
 
     public GodMode godMode;
 
-    public Player(Sprite spriteMain, Sprite spriteLacaio1, Sprite spriteLacaio2, float force, float acuracy, AudioClip bolaGolo, AudioClip themeSong, GodMode godMode, string nome, Sprite moldura)
+    public Player(Sprite spriteMain, Sprite spriteLacaio1, Sprite spriteLacaio2, float force, float acuracy, AudioClip bolaGolo, AudioClip themeSong, GodMode godMode, string nome, Sprite moldura, AudioClip especial)
     {
         this.spriteMain = spriteMain;
         this.spriteLacaio1 = spriteLacaio1;
@@ -26,5 +26,6 @@ public class Player
         this.godMode = godMode;
         this.nome = nome;
         this.moldura = moldura;
+        this.especial = especial;
     }
 }

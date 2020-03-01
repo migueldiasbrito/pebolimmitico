@@ -117,6 +117,7 @@ public class AtributePlayer : MonoBehaviour
         {
             (p2.godMode as Ares).otherGm = p1.godMode;
         }
+        ads = this.GetComponent<AudioSource>();
 
         if (StaticForPlayer.idP1 == 5)
         {
@@ -131,6 +132,11 @@ public class AtributePlayer : MonoBehaviour
         p1.godMode.activateKey = "joystick 1 button 6";
         p2.godMode.activateKey = "joystick 2 button 6";
 
+        p1.godMode.adC = p1.especial;
+        p2.godMode.adC = p2.especial;
+        p2.godMode.adS = ads;
+        p1.godMode.adS = ads;
+
 
         godPieceP1.GetComponent<SpriteRenderer>().sprite = p1.spriteMain;
         godPieceP2.GetComponent<SpriteRenderer>().sprite = p2.spriteMain;
@@ -141,7 +147,7 @@ public class AtributePlayer : MonoBehaviour
 
         lacaioPiece2P1.GetComponent<SpriteRenderer>().sprite = p2.spriteLacaio1;
         lacaioPiece2P2.GetComponent<SpriteRenderer>().sprite = p2.spriteLacaio2;
-        ads = this.GetComponent<AudioSource>();
+    
 
     }
 
@@ -167,7 +173,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("zeus/musica_zeus"), //Tehem
                                      gm,
                                      "Zeus",
-                                      Resources.Load<Sprite>("zeus/zeus-circulo")
+                                      Resources.Load<Sprite>("zeus/zeus-circulo"),
+                                      Resources.Load<AudioClip>("zeus/zeus_especial")
                                      );
 
 
@@ -195,7 +202,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("ares/musica_ares"), //Tehem
                                      gm,
                                      "Ares",
-                                     Resources.Load<Sprite>("ares/ares-circulo")
+                                     Resources.Load<Sprite>("ares/ares-circulo"),
+                                     Resources.Load<AudioClip>("zeus/ares_especial")
                                      );
 
 
@@ -218,7 +226,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("Afrodite/musica_afrodite"), //Tehem
                                      gm,
                                      "Afrodite",
-                                     Resources.Load<Sprite>("Afrodite/afrodite-circulo")
+                                     Resources.Load<Sprite>("Afrodite/afrodite-circulo"),
+                                     Resources.Load<AudioClip>("Afrodite/afrodite_especial")
                                      ) ;
 
         return Afrodite;
@@ -241,7 +250,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("medusa/musica_medusa"), //Tehem
                                      gm,
                                      "Medusa",
-                                     Resources.Load<Sprite>("medusa/medusa-circulo")
+                                     Resources.Load<Sprite>("medusa/medusa-circulo"),
+                                     Resources.Load<AudioClip>("medusa/medusa_especial")
                                      );
 
         return Medusa;
@@ -265,7 +275,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("dionisio/musica_dionisio"), //Tehem
                                      gm,
                                      "Dionisio",
-                                      Resources.Load<Sprite>("dionisio/dionisio-circulo")
+                                      Resources.Load<Sprite>("dionisio/dionisio-circulo"),
+                                      Resources.Load<AudioClip>("dionisio/dionisio_especial")
                                      );
 
         return Dionisio;
@@ -287,7 +298,8 @@ public class AtributePlayer : MonoBehaviour
                                      Resources.Load<AudioClip>("circe/musica_circe"), //Tehem
                                      gm,
                                      "Circe",
-                                     Resources.Load<Sprite>("circe/circe-circulo")
+                                     Resources.Load<Sprite>("circe/circe-circulo"),
+                                     Resources.Load<AudioClip>("circe/circe_especial")
                                      );
 
         return Circe;

@@ -16,6 +16,7 @@ public class Zeus : GodMode
             mcKeeper.GetBall().AddComponent<ZeusBall>();
             // consume all mana
             m_Mana = 0;
+            adS.PlayOneShot(adC);
             mcKeeper.GetBall().GetComponent<BallMovement>().PlayMeco();
         }
         if (mcDefenders.GetBall() != null)
@@ -24,6 +25,7 @@ public class Zeus : GodMode
             mcDefenders.GetBall().AddComponent<ZeusBall>();
             // consume all mana
             m_Mana = 0;
+            adS.PlayOneShot(adC);
             mcKeeper.GetBall().GetComponent<BallMovement>().PlayMeco();
         }
         // especial instantaneo, nunca activa
