@@ -18,6 +18,7 @@ public class AtributePlayer : MonoBehaviour
     public GameObject Ball;
     public GameObject Arrow;
     public Transform k1, d11, d12, k2, d21, d22;
+
     void Start()
     {
 
@@ -48,6 +49,10 @@ public class AtributePlayer : MonoBehaviour
                 p1 = genMedusa();
                 (p1.godMode as Medusa).oponentKeeper = mecop2;
                 (p1.godMode as Medusa).oponentDefenders = mecop2Def;
+                (p1.godMode as Medusa).renderers = new List<SpriteRenderer>();
+                (p1.godMode as Medusa).renderers.Add(godPieceP2.GetComponent<SpriteRenderer>());
+                (p1.godMode as Medusa).renderers.Add(lacaioPiece2P1.GetComponent<SpriteRenderer>());
+                (p1.godMode as Medusa).renderers.Add(lacaioPiece2P2.GetComponent<SpriteRenderer>());
                 break;
             case 5:
                 p1 = genCirce();
@@ -82,6 +87,10 @@ public class AtributePlayer : MonoBehaviour
                 p2 = genMedusa();
                 (p2.godMode as Medusa).oponentKeeper = mecop1;
                 (p2.godMode as Medusa).oponentDefenders = mecop1Def;
+                (p2.godMode as Medusa).renderers = new List<SpriteRenderer>();
+                (p2.godMode as Medusa).renderers.Add(godPieceP1.GetComponent<SpriteRenderer>());
+                (p2.godMode as Medusa).renderers.Add(lacaioPiece1P1.GetComponent<SpriteRenderer>());
+                (p2.godMode as Medusa).renderers.Add(lacaioPiece1P2.GetComponent<SpriteRenderer>());
                 break;
             case 5:
                 p2 = genCirce();
