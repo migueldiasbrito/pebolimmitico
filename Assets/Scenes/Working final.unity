@@ -1684,11 +1684,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4747216175279763254, guid: 8b9773adba2bd034c91e99f1a74d1806,
-        type: 3}
-      propertyPath: wtfKey
-      value: joystick 1 button 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5017500126617016412, guid: 8b9773adba2bd034c91e99f1a74d1806,
         type: 3}
       propertyPath: m_Name
