@@ -57,6 +57,10 @@ public class AtributePlayer : MonoBehaviour
                 break;
             case 5:
                 p1 = genCirce();
+                (p1.godMode as Circe).renderers = new List<SpriteRenderer>();
+                (p1.godMode as Circe).renderers.Add(godPieceP2.GetComponent<SpriteRenderer>());
+                (p1.godMode as Circe).renderers.Add(lacaioPiece2P1.GetComponent<SpriteRenderer>());
+                (p1.godMode as Circe).renderers.Add(lacaioPiece2P2.GetComponent<SpriteRenderer>());
                 break;
 
         }
@@ -73,7 +77,7 @@ public class AtributePlayer : MonoBehaviour
                 (p2.godMode as Ares).Keeper = k2;
                 (p2.godMode as Ares).D1 = d21;
                 (p2.godMode as Ares).D2 = d22;
-                (p1.godMode as Ares).Arrow = Arrow2;
+                (p2.godMode as Ares).Arrow = Arrow2;
                 break;
             case 2:
                 p2 = genAfrodite();
@@ -96,6 +100,10 @@ public class AtributePlayer : MonoBehaviour
                 break;
             case 5:
                 p2 = genCirce();
+                (p2.godMode as Circe).renderers = new List<SpriteRenderer>();
+                (p2.godMode as Circe).renderers.Add(godPieceP1.GetComponent<SpriteRenderer>());
+                (p2.godMode as Circe).renderers.Add(lacaioPiece1P1.GetComponent<SpriteRenderer>());
+                (p2.godMode as Circe).renderers.Add(lacaioPiece1P2.GetComponent<SpriteRenderer>());
                 break;
 
         }
@@ -108,6 +116,16 @@ public class AtributePlayer : MonoBehaviour
         if (StaticForPlayer.idP2 == 1)
         {
             (p2.godMode as Ares).otherGm = p1.godMode;
+        }
+
+        if (StaticForPlayer.idP1 == 5)
+        {
+            (p1.godMode as Circe).otherGm = p2.godMode;
+        }
+
+        if (StaticForPlayer.idP2 == 5)
+        {
+            (p2.godMode as Circe).otherGm = p1.godMode;
         }
 
         p1.godMode.activateKey = "joystick 1 button 6";
@@ -256,6 +274,10 @@ public class AtributePlayer : MonoBehaviour
     public Player genCirce()
     {
         GodMode gm = gameObject.AddComponent<Circe>();
+
+        gm.manaRateReload = 10;
+        gm.manaRateUse = 5;
+
         Player Circe = new Player(Resources.Load<Sprite>("circe/circe"), //main
                                      Resources.Load<Sprite>("Generics/mal"), //lacio 1
                                      Resources.Load<Sprite>("Generics/fem"), //lacio2

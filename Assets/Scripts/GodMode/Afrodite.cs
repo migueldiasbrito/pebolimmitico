@@ -7,7 +7,7 @@ public class Afrodite : GodMode
     public MecoController oponentDefenders;
     public MecoController myDefenders;
 
-    public List<Vector3> originalPosition;
+    public List<Vector3> originalPosition = new List<Vector3>();
 
     public override bool StartGodMode()
     {
