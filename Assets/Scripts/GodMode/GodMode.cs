@@ -24,7 +24,7 @@ public class GodMode : MonoBehaviour
         
         if(activated)
         {
-            m_Mana = Mathf.Max(0, m_Mana - Time.deltaTime * manaRateReload);
+            m_Mana = Mathf.Max(0, m_Mana - Time.deltaTime * manaRateUse);
             if (m_Mana > 0)
             {
                 UpdateGodMode();
