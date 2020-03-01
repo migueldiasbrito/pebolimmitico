@@ -16,7 +16,7 @@ public class AtributePlayer : MonoBehaviour
     public MecoController mecop1, mecop1Def;
     public MecoController mecop2, mecop2Def;
     public GameObject Ball;
-    public GameObject Arrow;
+    public GameObject Arrow, Arrow2;
     public Transform k1, d11, d12, k2, d21, d22;
 
     void Start()
@@ -34,6 +34,7 @@ public class AtributePlayer : MonoBehaviour
                 (p1.godMode as Ares).Keeper = k1;
                 (p1.godMode as Ares).D1 = d11;
                 (p1.godMode as Ares).D2 = d12;
+                (p1.godMode as Ares).Arrow = Arrow;
                 break;
             case 2:
                 p1 = genAfrodite();
@@ -72,6 +73,7 @@ public class AtributePlayer : MonoBehaviour
                 (p2.godMode as Ares).Keeper = k2;
                 (p2.godMode as Ares).D1 = d21;
                 (p2.godMode as Ares).D2 = d22;
+                (p1.godMode as Ares).Arrow = Arrow2;
                 break;
             case 2:
                 p2 = genAfrodite();
@@ -160,7 +162,6 @@ public class AtributePlayer : MonoBehaviour
 
         gm.manaRateReload = 10;
         gm.manaRateUse = 10;
-        gm.Arrow = Arrow;
         gm.interval = 1;
         gm.horizontalSpeed1 = 650;
         gm.horizontalSpeed2 = 350;
