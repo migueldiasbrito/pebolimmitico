@@ -8,7 +8,7 @@ public class AtributePlayer : MonoBehaviour
     public Player p1;
     public Player p2;
 
-    private AudioSource ads;
+    public AudioSource ads;
     
     public GameObject godPieceP1 , godPieceP2;
     public GameObject lacaioPiece1P1, lacaioPiece2P1, lacaioPiece1P2, lacaioPiece2P2;
@@ -21,19 +21,19 @@ public class AtributePlayer : MonoBehaviour
                 p1 = genZeus();
             break;
             case 1:
-                p1 = genZeus();
+                p1 = genAres();
                 break;
             case 2:
-                p1 = genZeus();
+                p1 = genAfrodite();
                 break;
             case 3:
-                p1 = genZeus();
+                p1 = genDionisio();
                 break;
             case 4:
-                p1 = genZeus();
+                p1 = genMedusa();
                 break;
             case 5:
-                p1 = genZeus();
+                p1 = genCirce();
                 break;
 
         }
@@ -95,13 +95,13 @@ public class AtributePlayer : MonoBehaviour
 
     public Player genAres()
     {
-        Player Ares = new Player(Resources.Load<Sprite>("Afrodite/afrodite"), //main
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
+        Player Ares = new Player(Resources.Load<Sprite>("ares/ares"), //main
+                                     Resources.Load<Sprite>("ares/ares"), //lacio 1
+                                     Resources.Load<Sprite>("ares/ares"), //lacio2
                                      4, //força
                                      0.5f,//precisao
-                                     Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
-                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite") //Tehem
+                                     Resources.Load<AudioClip>("ares/golo_ares"), //Golo
+                                     Resources.Load<AudioClip>("ares/musica_ares") //Tehem
                                      );
 
 

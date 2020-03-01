@@ -761,6 +761,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 565039664, guid: 8b9773adba2bd034c91e99f1a74d1806, type: 3}
+      propertyPath: m_Name
+      value: BalizaP1
+      objectReference: {fileID: 0}
+    - target: {fileID: 565039664, guid: 8b9773adba2bd034c91e99f1a74d1806, type: 3}
+      propertyPath: m_TagString
+      value: BalizaP1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939644670, guid: 8b9773adba2bd034c91e99f1a74d1806, type: 3}
+      propertyPath: m_Name
+      value: BalizaP2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1939644670, guid: 8b9773adba2bd034c91e99f1a74d1806, type: 3}
+      propertyPath: m_TagString
+      value: BalizaP2
+      objectReference: {fileID: 0}
     - target: {fileID: 5017500126617016412, guid: 8b9773adba2bd034c91e99f1a74d1806,
         type: 3}
       propertyPath: m_Name
@@ -819,6 +835,11 @@ PrefabInstance:
     - target: {fileID: 5017500126617016413, guid: 8b9773adba2bd034c91e99f1a74d1806,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5017500127075550294, guid: 8b9773adba2bd034c91e99f1a74d1806,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

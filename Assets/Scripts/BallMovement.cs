@@ -9,6 +9,8 @@ public class BallMovement : MonoBehaviour
     bool clickable;
     bool physics;
     Vector3 spawnPoint;
+
+    public AtributePlayer atributePlayer;
     void Start()
     {
         clickable = true;
@@ -70,9 +72,16 @@ public class BallMovement : MonoBehaviour
             ResetBall();
         }
 
-        if(other.gameObject.tag == "Baliza")
+        if(other.gameObject.tag == "BalizaP1")
         {
-            Debug.Log("GOLO!");
+            Debug.Log("GOLO! P2");
+            atributePlayer.ads.PlayOneShot(atributePlayer.p2.bolaGolo);
+            ResetBall();
+        }
+        if (other.gameObject.tag == "BalizaP2")
+        {
+            Debug.Log("GOLO! P1");
+            atributePlayer.ads.PlayOneShot(atributePlayer.p1.bolaGolo);
             ResetBall();
         }
         if (other.gameObject.tag == "Goal")
