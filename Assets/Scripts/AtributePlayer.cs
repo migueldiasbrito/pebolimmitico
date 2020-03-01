@@ -68,9 +68,9 @@ public class AtributePlayer : MonoBehaviour
 
 
         lacaioPiece1P1.GetComponent<SpriteRenderer>().sprite = p1.spriteMain;
-        lacaioPiece1P2.GetComponent<SpriteRenderer>().sprite = p2.spriteMain;
-
         lacaioPiece1P2.GetComponent<SpriteRenderer>().sprite = p1.spriteMain;
+
+        lacaioPiece2P1.GetComponent<SpriteRenderer>().sprite = p2.spriteMain;
         lacaioPiece2P2.GetComponent<SpriteRenderer>().sprite = p2.spriteMain;
         ads = this.GetComponent<AudioSource>();
 
@@ -81,14 +81,15 @@ public class AtributePlayer : MonoBehaviour
     public Player genZeus()
     {
         GodMode gm = gameObject.AddComponent<Zeus>();
-        Player Zeus = new Player(Resources.Load<Sprite>("Afrodite/afrodite"), //main
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
+        Player Zeus = new Player(Resources.Load<Sprite>("zeus/zeus"), //main
+                                     Resources.Load<Sprite>("zeus/zeus"), //lacio 1
+                                     Resources.Load<Sprite>("zeus/zeus"), //lacio2
                                      4, //força
                                      0.5f,//precisao
-                                     Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
-                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite"), //Tehem
-                                     gm
+                                     Resources.Load<AudioClip>("zeus/golo_zeus"), //Golo
+                                     Resources.Load<AudioClip>("zeus/musica_zeus"), //Tehem
+                                     gm,
+                                     "Zeus"
                                      );
 
 
@@ -105,7 +106,8 @@ public class AtributePlayer : MonoBehaviour
                                      0.5f,//precisao
                                      Resources.Load<AudioClip>("ares/golo_ares"), //Golo
                                      Resources.Load<AudioClip>("ares/musica_ares"), //Tehem
-                                     gm
+                                     gm,
+                                     "Ares"
                                      );
 
 
@@ -122,7 +124,8 @@ public class AtributePlayer : MonoBehaviour
                                      0.5f,//precisao
                                      Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
                                      Resources.Load<AudioClip>("Afrodite/musica_afrodite"), //Tehem
-                                     gm
+                                     gm,
+                                     "Afrodite"
                                      ) ;
 
         return Afrodite;
@@ -132,14 +135,15 @@ public class AtributePlayer : MonoBehaviour
     public Player genMedusa()
     {
         GodMode gm = gameObject.AddComponent<Medusa>();
-        Player Medusa = new Player(Resources.Load<Sprite>("Afrodite/afrodite"), //main
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
+        Player Medusa = new Player(Resources.Load<Sprite>("medusa/medusa"), //main
+                                     Resources.Load<Sprite>("medusa/medusa"), //lacio 1
+                                     Resources.Load<Sprite>("medusa/medusa"), //lacio2
                                      4, //força
                                      0.5f,//precisao
-                                     Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
-                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite"), //Tehem
-                                     gm
+                                     Resources.Load<AudioClip>("medusa/golo_medusa"), //Golo
+                                     Resources.Load<AudioClip>("medusa/musica_medusa"), //Tehem
+                                     gm,
+                                     "Medusa"
                                      );
 
         return Medusa;
@@ -149,14 +153,15 @@ public class AtributePlayer : MonoBehaviour
     public Player genDionisio()
     {
         GodMode gm = gameObject.AddComponent<Baco>();
-        Player Dionisio = new Player(Resources.Load<Sprite>("Afrodite/afrodite"), //main
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
+        Player Dionisio = new Player(Resources.Load<Sprite>("dionisio/dionisio"), //main
+                                     Resources.Load<Sprite>("dionisio/dionisio"), //lacio 1
+                                     Resources.Load<Sprite>("dionisio/dionisio"), //lacio2
                                      4, //força
                                      0.5f,//precisao
-                                     Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
-                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite"), //Tehem
-                                     gm
+                                     Resources.Load<AudioClip>("dionisio/golo_dionisio"), //Golo
+                                     Resources.Load<AudioClip>("dionisio/musica_dionisio"), //Tehem
+                                     gm,
+                                     "Dionisio"
                                      );
 
         return Dionisio;
@@ -165,14 +170,15 @@ public class AtributePlayer : MonoBehaviour
     public Player genCirce()
     {
         GodMode gm = gameObject.AddComponent<Circe>();
-        Player Circe = new Player(Resources.Load<Sprite>("Afrodite/afrodite"), //main
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio 1
-                                     Resources.Load<Sprite>("Afrodite/afrodite"), //lacio2
+        Player Circe = new Player(Resources.Load<Sprite>("circe/circe"), //main
+                                     Resources.Load<Sprite>("circe/circe"), //lacio 1
+                                     Resources.Load<Sprite>("circe/circe"), //lacio2
                                      4, //força
                                      0.5f,//precisao
-                                     Resources.Load<AudioClip>("Afrodite/golo_afrodite"), //Golo
-                                     Resources.Load<AudioClip>("Afrodite/musica_afrodite"), //Tehem
-                                     gm
+                                     Resources.Load<AudioClip>("circe/golo_circe"), //Golo
+                                     Resources.Load<AudioClip>("circe/musica_circe"), //Tehem
+                                     gm,
+                                     "Circe"
                                      );
 
         return Circe;

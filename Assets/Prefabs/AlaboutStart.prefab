@@ -3360,7 +3360,7 @@ PrefabInstance:
     - target: {fileID: 306458345706605033, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
       propertyPath: wtfKey
-      value: joystick 1 button2
+      value: joystick 1 button 2
       objectReference: {fileID: 0}
     - target: {fileID: 306458345706605033, guid: 520c3af0bcd551b4e94b1cba2a3270cb,
         type: 3}
