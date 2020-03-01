@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZeusBall : MonoBehaviour
 {
     public GameObject fuckedUpObject;
+    public Collider fuckedUpCollider;
     public float timeDestroyed = 10f;
 
     private float time;
@@ -25,6 +26,7 @@ public class ZeusBall : MonoBehaviour
             if(time >= timeDestroyed)
             {
                 fuckedUpObject.SetActive(true);
+                fuckedUpCollider.enabled = true;
                 Destroy(this);
             }
         }
@@ -48,9 +50,10 @@ public class ZeusBall : MonoBehaviour
         {
             if (other.gameObject.tag == "Meco")
             {
-                Debug.Log("ZeusBall hit Meco");
-                fuckedUpObject = other.gameObject;
+                Debug.Log("ZeusBall hit Meco" + other.name);
+                fuckedUpObject = other.gameObject.GetComponent<MecoController>().GetCorrespondingMeco(other);
                 fuckedUpObject.SetActive(false);
+                fuckedUpCollider.enabled = false;
                 time = 0;
             }
 

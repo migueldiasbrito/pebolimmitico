@@ -5,7 +5,7 @@ using UnityEngine;
 public static class StaticForPlayer
 {
 
-    public static int idP1 =2;
-    public static int idP2 =2;
+    public static int idP1 =5;
+    public static int idP2 =4;
 
 }

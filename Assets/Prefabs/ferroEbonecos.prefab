@@ -297,6 +297,8 @@ MonoBehaviour:
   cano: {fileID: 7127825386495870709}
   players: {fileID: 0}
   player: 0
+  colliders: []
+  mecos: []
 --- !u!135 &4790900289977957839
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BallMovement : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class BallMovement : MonoBehaviour
     Vector3 spawnPoint;
 
     public AtributePlayer atributePlayer;
+
+    public Text goal1;
+    public Text goal2;
     void Start()
     {
         clickable = true;
@@ -75,13 +80,20 @@ public class BallMovement : MonoBehaviour
         if(other.gameObject.tag == "BalizaP1")
         {
             Debug.Log("GOLO! P2");
-            atributePlayer.ads.PlayOneShot(atributePlayer.p2.bolaGolo);
+            atributePlayer.ads.PlayOneShot(atributePlayer.p1.bolaGolo);
+            goal1.text = (int.Parse(goal1.text) + 1).ToString();
+
+            if (goal1.text.Equals("2")) SceneManager.LoadScene(1);
+            
             ResetBall();
         }
         if (other.gameObject.tag == "BalizaP2")
         {
             Debug.Log("GOLO! P1");
-            atributePlayer.ads.PlayOneShot(atributePlayer.p1.bolaGolo);
+            atributePlayer.ads.PlayOneShot(atributePlayer.p2.bolaGolo);
+            goal2.text = (int.Parse(goal2.text) + 1).ToString();
+
+            if (goal2.text.Equals("2")) SceneManager.LoadScene(1);
             ResetBall();
         }
         if (other.gameObject.tag == "Goal")

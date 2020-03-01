@@ -39,6 +39,9 @@ public class MecoController : MonoBehaviour
 
     private float m_Mana;
 
+    public SphereCollider[] colliders;
+    public GameObject[] mecos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -163,5 +166,24 @@ public class MecoController : MonoBehaviour
     public GameObject GetBall()
     {
         return m_Ball;
+    }
+
+    public GameObject GetCorrespondingMeco(Collider collider)
+    {
+        if(collider.name != gameObject.name || collider.ToString() == "UnityEngine.SphereCollider")
+        {
+            return null;
+        }
+        Debug.Log(((SphereCollider)collider).center);
+        Debug.Log(colliders.Length);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            Debug.Log(colliders[i].center);
+            if(((SphereCollider)collider).center == colliders[i].center)
+            {
+                return mecos[i];
+            }
+        }
+        return null;
     }
 }
